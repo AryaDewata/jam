@@ -4,657 +4,626 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="https://github.com/aryadewata/konversi-jam">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
-    <title></title>
-
-    <!-- CSS -->
+    <meta name="author" content="https://github.com/aryadewata">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>今何時ですか</title>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap");
+        @import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
+        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap);
 
-        #loading {
-            position: fixed;
+        * {
+            padding-left: 0
         }
 
         * {
-            padding-left: 0;
+            padding-bottom: 0
         }
 
         #loading {
-            z-index: 10;
+            position: fixed
+        }
+
+        #loading img {
+            margin-left: auto
+        }
+
+        #loading {
+            z-index: 10
         }
 
         #loading,
         body {
-            height: 100vh;
+            height: 100vh
         }
 
-        [class~=container],
-        #header img {
-            height: 100%;
-        }
-
-        [class~=container],
         #loading {
-            background: white;
+            width: 100vw
         }
 
         * {
-            padding-bottom: 0;
+            padding-right: 0
         }
 
-        .vertical-center,
+        #loading,
+        body {
+            overflow: hidden
+        }
+
+        * {
+            padding-top: 0
+        }
+
+        #header img,
+        [class~=container] {
+            height: 100%
+        }
+
+        #loading,
+        [class~=container] {
+            background: #fff
+        }
+
+        * {
+            margin-left: 0
+        }
+
+        #loading img,
+        * {
+            margin-bottom: 0
+        }
+
+        #loading {
+            color: #646464
+        }
+
+        * {
+            margin-right: 0
+        }
+
+        #loading {
+            text-align: center
+        }
+
+        #loading {
+            transition: 2s
+        }
+
         #header {
-            display: flex;
+            padding-left: .625pc
         }
 
-        .vertical-center {
-            flex-direction: column;
-        }
-
-        #loading {
-            width: 100vw;
-        }
-
-        * {
-            padding-right: 0;
-        }
-
-        * {
-            padding-top: 0;
-        }
-
-        .vertical-center {
-            justify-content: center;
-        }
-
-        #loading img {
-            margin-left: auto;
-        }
-
-        body,
-        #loading {
-            overflow: hidden;
-        }
-
-        * {
-            margin-left: 0;
-        }
-
-        *,
-        #loading img {
-            margin-bottom: 0;
+        #header {
+            padding-bottom: .625pc
         }
 
         #header,
-        .vertical-center {
-            gap: .041666667in;
+        [class~=vertical-center] {
+            display: flex
+        }
+
+        #header {
+            padding-right: .625pc
+        }
+
+        #loading img,
+        * {
+            margin-top: 0
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        [class~=vertical-center] {
+            flex-direction: column
+        }
+
+        #header {
+            padding-top: .625pc
+        }
+
+        [class~=vertical-center] {
+            justify-content: center
+        }
+
+        #header {
+            height: 13%
+        }
+
+        #header,
+        [class~=vertical-center] {
+            gap: .25pc
+        }
+
+        * {
+            outline: 0
+        }
+
+        #header {
+            justify-self: left
+        }
+
+        #loading img {
+            margin-right: auto
+        }
+
+        #loading img {
+            width: 200px
         }
 
         [class~=clock] {
-            font-size: 1.125pc;
-        }
-
-        #loading {
-            color: #646464;
-        }
-
-        #loading {
-            text-align: center;
-        }
-
-        #loading {
-            transition: 2000ms;
-        }
-
-        #loading img {
-            margin-right: auto;
-        }
-
-        * {
-            margin-right: 0;
-        }
-
-        *,
-        #loading img {
-            margin-top: 0;
-        }
-
-        * {
-            box-sizing: border-box;
+            font-size: 18px
         }
 
         #header {
-            padding-left: .104166667in;
+            box-shadow: 0 1px 2.25pt #505050
+        }
+
+        * {
+            font-family: Nunito
         }
 
         [class~=clock] {
-            color: #787878;
+            color: #787878
         }
 
         [class~=header-text] {
-            font-family: "Noto Sans JP";
+            font-family: "Noto Sans JP"
         }
 
         [class~=header-text] {
-            font-size: 12pt;
+            font-size: 12pt
         }
 
         [class~=header-text] {
-            color: #505050;
+            color: #505050
         }
 
         [class~=header-text] {
-            letter-spacing: .020833333in;
+            letter-spacing: 1.5pt
         }
 
-        #header {
-            padding-bottom: .104166667in;
-        }
-
-        #header {
-            padding-right: .104166667in;
-        }
-
-        * {
-            outline: none;
-        }
-
-        #header {
-            padding-top: .104166667in;
-        }
-
-        * {
-            font-family: "Nunito";
-        }
-
-        #header {
-            height: 13%;
-        }
-
-        #header {
-            justify-self: left;
-        }
-
-        #header {
-            box-shadow: 0 .0625pc 2.25pt #505050;
-        }
-
-        #loading img {
-            width: 200px;
-        }
-
-        @media (max-width: 480px) {
-            #header {
-                height: 12%;
-            }
-
+        @media (max-width:480px) {
             [class~=clock] {
-                font-size: 1pc;
+                font-size: 12pt
             }
 
             [class~=header-text] {
-                font-size: .145833333in;
+                font-size: 10.5pt
+            }
+
+            #header {
+                height: 12%
             }
         }
 
         [class~=form],
         [class~=result] {
-            margin-left: auto;
+            margin-left: auto
         }
 
         button {
-            cursor: pointer;
-        }
-
-        input[type="time"]:hover {
-            color: #8585ff;
-        }
-
-        [class~=result],
-        input[type="time"] {
-            padding-left: .104166667in;
+            cursor: pointer
         }
 
         [class~=form] {
-            margin-bottom: 15pt;
+            margin-bottom: 15pt
         }
 
         [class~=result],
-        [class~=form] {
-            margin-right: auto;
+        input[type=time] {
+            padding-left: .625pc
         }
 
-        [class~=form] {
-            margin-top: 15pt;
+        input[type=time]:hover {
+            color: #8585ff
         }
 
-        input[type="time"] {
-            padding-bottom: 3pt;
-        }
-
-        [class~=result],
-        [class~=form] {
-            width: 90%;
-        }
-
-        [class~=result],
-        input[type="time"] {
-            padding-right: .104166667in;
+        [class~=form],
+        [class~=result] {
+            margin-right: auto
         }
 
         button {
-            padding-left: .208333333in;
+            padding-left: .208333333in
+        }
+
+        input[type=time] {
+            padding-bottom: .041666667in
+        }
+
+        [class~=result],
+        input[type=time] {
+            padding-right: .625pc
+        }
+
+        button {
+            padding-bottom: .0625in
+        }
+
+        input[type=time]:hover {
+            background: rgba(133, 133, 255, .1)
+        }
+
+        input[type=time] {
+            padding-top: .041666667in
         }
 
         [class~=form] {
-            display: flex;
+            margin-top: 15pt
+        }
+
+        button {
+            padding-right: .208333333in
+        }
+
+        button,
+        input[type=time] {
+            border-radius: 2.25pt
+        }
+
+        button {
+            padding-top: .0625in
+        }
+
+        [class~=form],
+        [class~=result] {
+            width: 90%
+        }
+
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-left-width: .010416667in
+        }
+
+        button {
+            background: #fff
         }
 
         [class~=form] {
-            gap: 7.5pt;
+            display: flex
+        }
+
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-bottom-width: .010416667in
+        }
+
+        [class~=form] {
+            gap: 7.5pt
         }
 
         [class~=result] {
-            cursor: default;
+            cursor: default
         }
 
-        input[type="time"] {
-            padding-top: 3pt;
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-right-width: .0625pc
         }
 
-        button {
-            padding-bottom: .375pc;
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-top-width: .0625pc
         }
 
-        button {
-            padding-right: .208333333in;
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-left-style: solid
+        }
+
+        #main {
+            padding-left: 0
+        }
+
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-bottom-style: solid
+        }
+
+        [class~=result] {
+            margin-bottom: 0
+        }
+
+        [class~=result] {
+            margin-top: 0
+        }
+
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-right-style: solid
+        }
+
+        [class~=result],
+        button,
+        input[type=time],
+        input[type=time]:hover {
+            border-top-style: solid
+        }
+
+        #main {
+            padding-bottom: 15pt
+        }
+
+        button,
+        input[type=time] {
+            border-left-color: #b4b4b4
+        }
+
+        #main,
+        footer {
+            padding-right: 0
+        }
+
+        [class~=result],
+        footer {
+            padding-bottom: .104166667in
+        }
+
+        button,
+        input[type=time] {
+            border-bottom-color: #b4b4b4
+        }
+
+        button,
+        input[type=time] {
+            border-right-color: #b4b4b4
+        }
+
+        [class~=result],
+        footer {
+            padding-top: .104166667in
+        }
+
+        button,
+        input[type=time] {
+            border-top-color: #b4b4b4
+        }
+
+        button,
+        input[type=time] {
+            border-image: none
+        }
+
+        #main {
+            padding-top: 15pt
         }
 
         [class~=result]:hover {
-            background: #f0f0f0;
+            background: #f0f0f0
         }
 
         button,
-        input[type="time"] {
-            border-radius: .03125in;
+        input[type=time] {
+            font-size: 18px
         }
 
         [class~=result] {
-            margin-bottom: 0;
+            border-left-color: #969696
         }
 
-        input[type="time"]:hover,
-        [class~=result],
+        input[type=time] {
+            color: #505050
+        }
+
+        input[type=time] {
+            letter-spacing: .0625pc
+        }
+
+        button {
+            color: #969696
+        }
+
         button,
-        input[type="time"] {
-            border-left-width: .010416667in;
+        input[type=time] {
+            transition: .3s
         }
 
-        input[type="time"],
-        input[type="time"]:hover,
-        [class~=result],
-        button {
-            border-bottom-width: .010416667in;
+        footer {
+            padding-left: 0
         }
 
-        input[type="time"]:hover,
-        button,
-        input[type="time"],
-        [class~=result] {
-            border-right-width: .010416667in;
+        input[type=time]::-webkit-calendar-picker-indicator {
+            filter: invert(65%) sepia(13%) saturate(1%) hue-rotate(130deg) brightness(100%) contrast(100%)
         }
 
-        button {
-            padding-top: .375pc;
+        button:hover {
+            color: #8585ff
         }
 
-        input[type="time"],
-        input[type="time"]:hover,
-        [class~=result],
-        button {
-            border-top-width: .010416667in;
-        }
-
-        [class~=result] {
-            margin-top: 0;
-        }
-
-        #main {
-            padding-left: 0;
-        }
-
-        input[type="time"],
-        button,
-        [class~=result],
-        input[type="time"]:hover {
-            border-left-style: solid;
-        }
-
-        button {
-            background: white;
+        button:hover {
+            background: rgba(133, 133, 255, .1)
         }
 
         [class~=result] {
-            padding-bottom: .104166667in;
+            border-bottom-color: #969696
         }
 
-        [class~=result] {
-            padding-top: .104166667in;
+        footer {
+            width: 100%
         }
 
-        button,
-        input[type="time"],
-        [class~=result],
-        input[type="time"]:hover {
-            border-bottom-style: solid;
-        }
-
-        button,
-        [class~=result],
-        input[type="time"]:hover,
-        input[type="time"] {
-            border-right-style: solid;
-        }
-
-        button,
-        [class~=result],
-        input[type="time"]:hover,
-        input[type="time"] {
-            border-top-style: solid;
-        }
-
-        input[type="time"],
-        button {
-            border-left-color: #b4b4b4;
-        }
-
-        input[type="time"],
-        button {
-            border-bottom-color: #b4b4b4;
-        }
-
-        input[type="time"],
-        button {
-            border-right-color: #b4b4b4;
-        }
-
-        input[type="time"],
-        button {
-            border-top-color: #b4b4b4;
-        }
-
-        input[type="time"],
-        button {
-            border-image: none;
-        }
-
-        button,
-        input[type="time"] {
-            font-size: 18px;
-        }
-
-        #main {
-            padding-bottom: .208333333in;
-        }
-
-        input[type="time"] {
-            color: #505050;
+        button:hover {
+            border-left-width: .0625pc
         }
 
         button:hover,
-        input[type="time"]:hover {
-            border-left-color: #8585ff;
-        }
-
-        input[type="time"]:hover,
-        button:hover {
-            border-bottom-color: #8585ff;
-        }
-
-        input[type="time"] {
-            letter-spacing: .010416667in;
-        }
-
-        input[type="time"]::-webkit-calendar-picker-indicator {
-            filter: invert(65%) sepia(13%) saturate(1%) hue-rotate(130deg) brightness(100%) contrast(100%);
+        input[type=time]:hover {
+            border-left-color: #8585ff
         }
 
         button:hover {
-            color: #8585ff;
+            border-bottom-width: .0625pc
+        }
+
+        [class~=result] {
+            border-right-color: #969696
+        }
+
+        footer {
+            height: 8%
+        }
+
+        footer {
+            position: fixed
+        }
+
+        button:hover {
+            border-right-width: .0625pc
+        }
+
+        button:hover {
+            border-top-width: .0625pc
+        }
+
+        button:hover {
+            border-left-style: solid
+        }
+
+        [class~=result] {
+            border-top-color: #969696
+        }
+
+        button:hover {
+            border-bottom-style: solid
+        }
+
+        footer {
+            bottom: 0
+        }
+
+        button:hover {
+            border-right-style: solid
+        }
+
+        button:hover {
+            border-top-style: solid
+        }
+
+        footer {
+            display: flex
+        }
+
+        [class~=result] {
+            border-image: none
+        }
+
+        footer {
+            justify-content: center
+        }
+
+        footer {
+            gap: .375pc
         }
 
         button:hover,
-        input[type="time"]:hover {
-            border-right-color: #8585ff;
+        input[type=time]:hover {
+            border-bottom-color: #8585ff
+        }
+
+        footer {
+            background: #1e1e1e
         }
 
         [class~=result] {
-            border-left-color: #969696;
+            border-radius: .3125pc
+        }
+
+        button:hover,
+        input[type=time]:hover {
+            border-right-color: #8585ff
+        }
+
+        #hour-format,
+        footer {
+            font-size: 14px
         }
 
         [class~=result] {
-            border-bottom-color: #969696;
+            background: #e6e6e6
+        }
+
+        button:hover,
+        input[type=time]:hover {
+            border-top-color: #8585ff
         }
 
         [class~=result] {
-            border-right-color: #969696;
+            transition: .2s
         }
 
-        button:hover {
-            border-left-width: .0625pc;
-        }
-
-        button:hover {
-            border-bottom-width: .0625pc;
-        }
-
-        [class~=result] {
-            border-top-color: #969696;
-        }
-
-        button:hover {
-            border-right-width: .0625pc;
-        }
-
-        button:hover {
-            border-top-width: .0625pc;
-        }
-
-        button {
-            color: #969696;
-        }
-
-        button {
-            transition: 300ms;
-        }
-
-        footer {
-            padding-left: 0;
-        }
-
-        [class~=result] {
-            border-image: none;
-        }
-
-        button:hover {
-            border-left-style: solid;
-        }
-
-        button:hover {
-            border-bottom-style: solid;
-        }
-
-        [class~=result] {
-            border-radius: 5px;
-        }
-
-        footer {
-            padding-bottom: .625pc;
-        }
-
-        input[type="time"]:hover,
-        button:hover {
-            border-top-color: #8585ff;
-        }
-
-        [class~=result] {
-            background: #e6e6e6;
-        }
-
-        button:hover {
-            border-right-style: solid;
-        }
-
-        footer,
-        #main {
-            padding-right: 0;
-        }
-
-        input[type="time"]:hover {
-            border-image: none;
-        }
-
-        [class~=result] {
-            transition: 200ms;
-        }
-
-        button:hover {
-            border-top-style: solid;
-        }
-
-        footer {
-            padding-top: .625pc;
-        }
-
-        footer {
-            width: 100%;
-        }
-
-        footer {
-            height: 9%;
-        }
-
-        footer {
-            position: fixed;
-        }
-
-        footer {
-            bottom: 0;
-        }
-
-        footer {
-            display: flex;
-        }
-
-        footer {
-            justify-content: center;
-        }
-
-        footer {
-            gap: 7.5pt;
-        }
-
-        footer {
-            background: #1e1e1e;
-        }
-
-        button:hover {
-            border-image: none;
-        }
-
-        footer,
-        #hour-format {
-            font-size: 10.5pt;
+        button:hover,
+        input[type=time]:hover {
+            border-image: none
         }
 
         [class~=result] p {
-            font-size: 1.125pc;
-        }
-
-        [class~=result] p {
-            color: #505050;
+            font-size: 1.125pc
         }
 
         footer {
-            color: white;
+            color: #fff
         }
 
-        #main {
-            padding-top: .208333333in;
+        [class~=result] p {
+            color: #505050
         }
 
         footer img {
-            max-height: 85% !important;
+            max-height: 80% !important
         }
 
-        @media (max-width: 480px) {
+        @media (max-width:480px) {
             footer {
-                font-size: 9.75pt;
+                font-size: 9pt
             }
         }
     </style>
-
-    <!-- Favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/plasticine/2x/clock.png" type="image/x-icon">
-
-    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-    <!-- Loading Screen -->
-    <div id="loading" class="vertical-center">
-        <img src="img/loading.gif" alt="loading image">
+    <div id="loading" class="vertical-center"><img src="img/loading.gif" alt="loading image">
         <p>Mohon menunggu...</p>
     </div>
-
-    <!-- Container -->
     <div class="container">
-
-        <!-- Header Section -->
-        <section id="header">
-            <img src="img/jam.png" alt="gambar jam" title="gambar jam" loading="lazy">
+        <section id="header"><img src="img/jam.png" alt="gambar jam" title="gambar jam" loading="lazy">
             <div class="vertical-center">
                 <p class="clock">10:45</p>
                 <p class="header-text" title="Imananjidesuka">今何時ですか</p>
             </div>
         </section>
-
-        <!-- Main Section -->
         <section id="main">
-
-            <div class="form">
-                <input type="time" id="time-input">
-                <button onclick="run()" title="Klik untuk mengkonversi">Konversi</button>
-            </div>
-
+            <div class="form"><input type="time" id="time-input"><button onclick="run()"
+                    title="Klik untuk mengkonversi">Konversi</button></div>
             <div class="result">
                 <p id="hour-format"></p>
                 <p id="result"></p>
             </div>
-
         </section>
-
-        <!-- Footer -->
         <footer>
-            <div class="vertical-center">
-                <img src="img/stibal-developer-logo revisi.png" alt="logo smkti bali global singaraja">
-            </div>
+            <div class="vertical-center"><img src="img/stibal-developer-logo revisi.png"
+                    alt="logo smkti bali global singaraja"></div>
             <p class="vertical-center">Created by Software Engineering Students 2022.</p>
         </footer>
-
     </div>
-
-    <!-- Javascript -->
-    <script>var _0x18bacc = _0x45b7; function _0x45b7(_0x320541, _0x2eb1b4) { var _0x652cd6 = _0x652c(); return _0x45b7 = function (_0x45b7c9, _0xdd7ca5) { _0x45b7c9 = _0x45b7c9 - 0x17e; var _0x55384f = _0x652cd6[_0x45b7c9]; return _0x55384f; }, _0x45b7(_0x320541, _0x2eb1b4); } (function (_0x4b269e, _0xb94f7a) { var _0x12dc3c = _0x45b7, _0x59fb44 = _0x4b269e(); while (!![]) { try { var _0x47be25 = -parseInt(_0x12dc3c(0x183)) / 0x1 + -parseInt(_0x12dc3c(0x188)) / 0x2 * (parseInt(_0x12dc3c(0x18f)) / 0x3) + parseInt(_0x12dc3c(0x186)) / 0x4 * (parseInt(_0x12dc3c(0x18a)) / 0x5) + parseInt(_0x12dc3c(0x182)) / 0x6 * (parseInt(_0x12dc3c(0x191)) / 0x7) + parseInt(_0x12dc3c(0x184)) / 0x8 + -parseInt(_0x12dc3c(0x190)) / 0x9 * (-parseInt(_0x12dc3c(0x187)) / 0xa) + parseInt(_0x12dc3c(0x181)) / 0xb * (-parseInt(_0x12dc3c(0x18d)) / 0xc); if (_0x47be25 === _0xb94f7a) break; else _0x59fb44['push'](_0x59fb44['shift']()); } catch (_0x2ccc07) { _0x59fb44['push'](_0x59fb44['shift']()); } } }(_0x652c, 0x67d68), $(document)[_0x18bacc(0x17f)](function () { var _0x5aa560 = _0x18bacc; setTimeout(() => { var _0x54796d = _0x45b7; $(_0x54796d(0x18c))['css'](_0x54796d(0x17e), '0%'), setTimeout(() => { var _0x5978e7 = _0x54796d; $(_0x5978e7(0x18c))[_0x5978e7(0x18e)](); }, 0x7d0); }, 0x7d0), document[_0x5aa560(0x192)](_0x5aa560(0x189))[_0x5aa560(0x18b)] = _0x5aa560(0x185), document[_0x5aa560(0x192)](_0x5aa560(0x180))[_0x5aa560(0x18b)] = _0x5aa560(0x185); })); function _0x652c() { var _0x4b7075 = ['312257OSnXDx', '153372rPFXUJ', '601896pegCPa', '1996944iyuMIO', '今何時ですか', '16JvNPwU', '18680qmfAuR', '1486fiLAVz', 'title', '123555XySTTM', 'innerHTML', '#loading', '156qIFZjX', 'remove', '1473mDfJox', '2988mtNghv', '217IJyZbK', 'querySelector', 'opacity', 'ready', '.header-text']; _0x652c = function () { return _0x4b7075; }; return _0x652c(); }</script>
-    <script>const _0x35d89c = _0x4482; function _0x4482(_0x25075c, _0x3f40cb) { const _0x3888fc = _0x3888(); return _0x4482 = function (_0x448283, _0x3a6dbd) { _0x448283 = _0x448283 - 0x9f; let _0x4bd1ac = _0x3888fc[_0x448283]; return _0x4bd1ac; }, _0x4482(_0x25075c, _0x3f40cb); } (function (_0x3e261d, _0xbf3f1f) { const _0x51f525 = _0x4482, _0x12aecb = _0x3e261d(); while (!![]) { try { const _0x4885dd = parseInt(_0x51f525(0xba)) / 0x1 + parseInt(_0x51f525(0xbc)) / 0x2 * (-parseInt(_0x51f525(0xa4)) / 0x3) + -parseInt(_0x51f525(0xc3)) / 0x4 * (parseInt(_0x51f525(0xa6)) / 0x5) + -parseInt(_0x51f525(0xc1)) / 0x6 + parseInt(_0x51f525(0xd4)) / 0x7 * (parseInt(_0x51f525(0xc0)) / 0x8) + -parseInt(_0x51f525(0xbf)) / 0x9 * (-parseInt(_0x51f525(0xb4)) / 0xa) + parseInt(_0x51f525(0xc6)) / 0xb * (parseInt(_0x51f525(0xcd)) / 0xc); if (_0x4885dd === _0xbf3f1f) break; else _0x12aecb['push'](_0x12aecb['shift']()); } catch (_0x50a49a) { _0x12aecb['push'](_0x12aecb['shift']()); } } }(_0x3888, 0x88455), $(document)[_0x35d89c(0xd9)](_0x35d89c(0xb5), function (_0x539481) { return ![]; }), $(document)['on']('keydown', function (_0x2c7699) { const _0x49e57b = _0x35d89c; if (_0x2c7699[_0x49e57b(0xb6)] == 0x7b) return ![]; if (_0x2c7699['ctrlKey'] && _0x2c7699[_0x49e57b(0xcc)] && _0x2c7699[_0x49e57b(0xb6)] == 'I'['charCodeAt'](0x0)) return ![]; if (_0x2c7699[_0x49e57b(0xd2)] && _0x2c7699[_0x49e57b(0xcc)] && _0x2c7699[_0x49e57b(0xb6)] == 'C'[_0x49e57b(0xa1)](0x0)) return ![]; if (_0x2c7699[_0x49e57b(0xd2)] && _0x2c7699['shiftKey'] && _0x2c7699['keyCode'] == 'J'[_0x49e57b(0xa1)](0x0)) return ![]; if (_0x2c7699[_0x49e57b(0xd2)] && _0x2c7699[_0x49e57b(0xb6)] == 'U'['charCodeAt'](0x0)) return ![]; })); const clock = document[_0x35d89c(0xb0)](_0x35d89c(0xa2)); clock[_0x35d89c(0xc9)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()['getHours']() + ':' + (new Date()[_0x35d89c(0xaa)]() < 0xa ? '0' : '') + new Date()[_0x35d89c(0xaa)](); function displayClock() { const _0x7abd2f = _0x35d89c; clock[_0x7abd2f(0xc9)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()[_0x7abd2f(0xd8)]() + ':' + (new Date()['getMinutes']() < 0xa ? '0' : '') + new Date()['getMinutes'](); } setInterval(() => { displayClock(); }, 0x1388); function _0x3888() { const _0x128d57 = ['go\x20juppun', '480188cyGgbi', 'happun', '148186vWszwG', '#hour-format', 'nanafun', '9koHTFK', '95176ueAeGU', '745590aqQKcj', '#result', '4yOSGVr', 'ni\x20juppun', 'san\x20juppun', '11xRzqvY', 'roppun', 'Gogo', 'innerHTML', 'juu-ichi\x20ji', 'value', 'shiftKey', '2053572WocXyo', 'ippun', 'juu\x20ji', 'go\x20ji', 'juu-ni\x20ji', 'ctrlKey', 'yon-', '7gnVAPc', 'go-', 'ku\x20ji', 'sanpun', 'getHours', 'bind', 'ni\x20ji', 'shichi\x20ji', 'charCodeAt', '.clock', 'yon\x20juppun', '6TcRqYh', 'yonpun', '3213115mWCStL', 'roku\x20ji', 'yo\x20ji', 'split', 'getMinutes', 'hachi\x20ji', 'san\x20ji', 'gofun', 'ni-', 'ichi\x20ji', 'querySelector', 'nifun', 'juu\x20', 'juu-', '8100230KvGdMA', 'contextmenu', 'keyCode', 'Gozen', 'get']; _0x3888 = function () { return _0x128d57; }; return _0x3888(); } const hourFormat = document[_0x35d89c(0xb0)](_0x35d89c(0xbd)), textarea = document['querySelector'](_0x35d89c(0xc2)); let jamJP = new Map([['00', _0x35d89c(0xd1)], ['01', _0x35d89c(0xaf)], ['02', _0x35d89c(0x9f)], ['03', _0x35d89c(0xac)], ['04', _0x35d89c(0xa8)], ['05', _0x35d89c(0xd0)], ['06', 'roku\x20ji'], ['07', _0x35d89c(0xa0)], ['08', _0x35d89c(0xab)], ['09', _0x35d89c(0xd6)], ['10', _0x35d89c(0xcf)], ['11', _0x35d89c(0xca)], ['12', _0x35d89c(0xd1)], ['13', 'ichi\x20ji'], ['14', 'ni\x20ji'], ['15', _0x35d89c(0xac)], ['16', _0x35d89c(0xa8)], ['17', _0x35d89c(0xd0)], ['18', _0x35d89c(0xa7)], ['19', _0x35d89c(0xa0)], ['20', _0x35d89c(0xab)], ['21', _0x35d89c(0xd6)], ['22', _0x35d89c(0xcf)], ['23', _0x35d89c(0xca)]]), menitJP = new Map([['00', ''], ['01', _0x35d89c(0xce)], ['02', _0x35d89c(0xb1)], ['03', _0x35d89c(0xd7)], ['04', _0x35d89c(0xa5)], ['05', _0x35d89c(0xad)], ['06', _0x35d89c(0xc7)], ['07', _0x35d89c(0xbe)], ['08', _0x35d89c(0xbb)], ['09', 'kyuufun']]), menitKelipatanJP = new Map([['10', 'juppun'], ['20', _0x35d89c(0xc4)], ['30', _0x35d89c(0xc5)], ['40', _0x35d89c(0xa3)], ['50', _0x35d89c(0xb9)]]), menitPuluhanJP = new Map([['1', _0x35d89c(0xb3)], ['2', _0x35d89c(0xae)], ['3', 'san-'], ['4', _0x35d89c(0xd3)], ['5', _0x35d89c(0xd5)]]); function run() { const _0x4aea7d = _0x35d89c; let _0x5915d9 = document[_0x4aea7d(0xb0)]('#time-input')[_0x4aea7d(0xcb)], _0xd772e6 = (_0x5915d9['split'](':')[0x0] < 0xc ? _0x4aea7d(0xb7) : _0x4aea7d(0xc8)) + '\x20' + jamJP[_0x4aea7d(0xb8)](_0x5915d9[_0x4aea7d(0xa9)](':')[0x0]), _0x583cc5 = ''; if (_0x5915d9[_0x4aea7d(0xa9)](':')[0x1][_0x4aea7d(0xa9)]('')[0x0] == '0') _0x583cc5 = menitJP['get'](_0x5915d9[_0x4aea7d(0xa9)](':')[0x1]); else menitKelipatanJP[_0x4aea7d(0xb8)](_0x5915d9[_0x4aea7d(0xa9)](':')[0x1]) != undefined ? _0x583cc5 = menitKelipatanJP[_0x4aea7d(0xb8)](_0x5915d9['split'](':')[0x1]) : _0x583cc5 = '' + menitPuluhanJP['get'](_0x5915d9[_0x4aea7d(0xa9)](':')[0x1]['split']('')[0x0]) + (_0x5915d9['split'](':')[0x1]['split']('')[0x0] != 0x1 ? _0x4aea7d(0xb2) : '') + menitJP['get']('0' + _0x5915d9[_0x4aea7d(0xa9)](':')[0x1][_0x4aea7d(0xa9)]('')[0x1]); hourFormat[_0x4aea7d(0xc9)] = _0x5915d9 + '\x20/\x20' + (_0x5915d9['split'](':')[0x0] > 0xc ? _0x5915d9[_0x4aea7d(0xa9)](':')[0x0] - 0xc : _0x5915d9[_0x4aea7d(0xa9)](':')[0x0]) + ':' + _0x5915d9[_0x4aea7d(0xa9)](':')[0x1] + '\x20' + (_0x5915d9[_0x4aea7d(0xa9)](':')[0x0] < 0xc ? 'am' : 'pm'), textarea[_0x4aea7d(0xc9)] = _0xd772e6 + '\x20' + _0x583cc5; }</script>
-
+    <script>const _0x56ba9a = _0x3e37; (function (_0x2dfccc, _0x23938e) { const _0x4e0e6a = _0x3e37, _0x25c2cc = _0x2dfccc(); while (!![]) { try { const _0x4c6895 = parseInt(_0x4e0e6a(0x1d5)) / 0x1 + parseInt(_0x4e0e6a(0x1c7)) / 0x2 * (-parseInt(_0x4e0e6a(0x1c5)) / 0x3) + parseInt(_0x4e0e6a(0x1d0)) / 0x4 * (-parseInt(_0x4e0e6a(0x1c2)) / 0x5) + parseInt(_0x4e0e6a(0x1ea)) / 0x6 * (parseInt(_0x4e0e6a(0x1c1)) / 0x7) + parseInt(_0x4e0e6a(0x1de)) / 0x8 + -parseInt(_0x4e0e6a(0x1b9)) / 0x9 * (parseInt(_0x4e0e6a(0x1be)) / 0xa) + parseInt(_0x4e0e6a(0x1cb)) / 0xb; if (_0x4c6895 === _0x23938e) break; else _0x25c2cc['push'](_0x25c2cc['shift']()); } catch (_0x309583) { _0x25c2cc['push'](_0x25c2cc['shift']()); } } }(_0x14d1, 0x32df6), $(document)[_0x56ba9a(0x1ce)](function () { setTimeout(() => { const _0xc0a8d2 = _0x3e37; $(_0xc0a8d2(0x1e9))[_0xc0a8d2(0x1ec)]('opacity', '0%'), setTimeout(() => { const _0x61ea34 = _0xc0a8d2; $(_0x61ea34(0x1e9))[_0x61ea34(0x1bd)](); }, 0x7d0); }, 0x7d0); }), $(document)['bind'](_0x56ba9a(0x1b7), function (_0x2bdc14) { return ![]; }), $(document)['on'](_0x56ba9a(0x1c3), function (_0x3e1b50) { const _0x4eb3de = _0x56ba9a; if (_0x3e1b50[_0x4eb3de(0x1ca)] == 0x7b) return ![]; if (_0x3e1b50[_0x4eb3de(0x1e7)] && _0x3e1b50[_0x4eb3de(0x1d2)] && _0x3e1b50[_0x4eb3de(0x1ca)] == 'I'[_0x4eb3de(0x1e8)](0x0)) return ![]; if (_0x3e1b50[_0x4eb3de(0x1e7)] && _0x3e1b50[_0x4eb3de(0x1d2)] && _0x3e1b50[_0x4eb3de(0x1ca)] == 'C'['charCodeAt'](0x0)) return ![]; if (_0x3e1b50['ctrlKey'] && _0x3e1b50[_0x4eb3de(0x1d2)] && _0x3e1b50[_0x4eb3de(0x1ca)] == 'J'['charCodeAt'](0x0)) return ![]; if (_0x3e1b50[_0x4eb3de(0x1e7)] && _0x3e1b50['keyCode'] == 'U'[_0x4eb3de(0x1e8)](0x0)) return ![]; })); function _0x14d1() { const _0x19a1bd = ['8ZpUHxK', 'juu-ichi\x20ji', 'shiftKey', 'getMinutes', 'gofun', '62632FTIyCj', '#time-input', 'nifun', 'sanpun', 'ni\x20ji', 'juu-ni\x20ji', 'juu\x20', 'get', 'go\x20ji', '727152BqGeis', 'shichi\x20ji', 'yo\x20ji', 'go\x20juppun', 'juppun', 'san\x20juppun', 'getHours', 'ippun', 'ichi\x20ji', 'ctrlKey', 'charCodeAt', '#loading', '29436fhcAGh', '.clock', 'css', 'yonpun', 'innerHTML', 'juu\x20ji', 'roku\x20ji', 'value', 'contextmenu', 'split', '36CzGcms', 'kyuufun', 'querySelector', 'ku\x20ji', 'remove', '178830MdYxRd', 'ni\x20juppun', 'happun', '322kfHYwo', '547985Ubkqlh', 'keydown', 'Gogo', '3mhxIWB', 'san\x20ji', '398410wMGHdA', 'yon\x20juppun', 'yon-', 'keyCode', '3510133wDoXFo', 'san-', 'go-', 'ready', 'hachi\x20ji']; _0x14d1 = function () { return _0x19a1bd; }; return _0x14d1(); } const clock = document[_0x56ba9a(0x1bb)](_0x56ba9a(0x1eb)); clock['innerHTML'] = '' + (new Date()[_0x56ba9a(0x1e4)]() < 0xa ? '0' : '') + new Date()[_0x56ba9a(0x1e4)]() + ':' + (new Date()[_0x56ba9a(0x1d3)]() < 0xa ? '0' : '') + new Date()[_0x56ba9a(0x1d3)](); function displayClock() { const _0x264a85 = _0x56ba9a; clock[_0x264a85(0x1ee)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()[_0x264a85(0x1e4)]() + ':' + (new Date()[_0x264a85(0x1d3)]() < 0xa ? '0' : '') + new Date()[_0x264a85(0x1d3)](); } function _0x3e37(_0x5d3005, _0x3b01fc) { const _0x14d15d = _0x14d1(); return _0x3e37 = function (_0x3e378b, _0x431c3c) { _0x3e378b = _0x3e378b - 0x1b4; let _0x1d576b = _0x14d15d[_0x3e378b]; return _0x1d576b; }, _0x3e37(_0x5d3005, _0x3b01fc); } setInterval(() => { displayClock(); }, 0x1388); const hourFormat = document[_0x56ba9a(0x1bb)]('#hour-format'), textarea = document[_0x56ba9a(0x1bb)]('#result'); let jamJP = new Map([['00', 'juu-ni\x20ji'], ['01', _0x56ba9a(0x1e6)], ['02', _0x56ba9a(0x1d9)], ['03', 'san\x20ji'], ['04', 'yo\x20ji'], ['05', _0x56ba9a(0x1dd)], ['06', 'roku\x20ji'], ['07', _0x56ba9a(0x1df)], ['08', _0x56ba9a(0x1cf)], ['09', _0x56ba9a(0x1bc)], ['10', 'juu\x20ji'], ['11', _0x56ba9a(0x1d1)], ['12', _0x56ba9a(0x1da)], ['13', _0x56ba9a(0x1e6)], ['14', _0x56ba9a(0x1d9)], ['15', _0x56ba9a(0x1c6)], ['16', _0x56ba9a(0x1e0)], ['17', _0x56ba9a(0x1dd)], ['18', _0x56ba9a(0x1b5)], ['19', _0x56ba9a(0x1df)], ['20', _0x56ba9a(0x1cf)], ['21', _0x56ba9a(0x1bc)], ['22', _0x56ba9a(0x1b4)], ['23', _0x56ba9a(0x1d1)]]), menitJP = new Map([['00', ''], ['01', _0x56ba9a(0x1e5)], ['02', _0x56ba9a(0x1d7)], ['03', _0x56ba9a(0x1d8)], ['04', _0x56ba9a(0x1ed)], ['05', _0x56ba9a(0x1d4)], ['06', 'roppun'], ['07', 'nanafun'], ['08', _0x56ba9a(0x1c0)], ['09', _0x56ba9a(0x1ba)]]), menitKelipatanJP = new Map([['10', _0x56ba9a(0x1e2)], ['20', _0x56ba9a(0x1bf)], ['30', _0x56ba9a(0x1e3)], ['40', _0x56ba9a(0x1c8)], ['50', _0x56ba9a(0x1e1)]]), menitPuluhanJP = new Map([['1', 'juu-'], ['2', 'ni-'], ['3', _0x56ba9a(0x1cc)], ['4', _0x56ba9a(0x1c9)], ['5', _0x56ba9a(0x1cd)]]); function run() { const _0x4c9a83 = _0x56ba9a; let _0x4d572e = document['querySelector'](_0x4c9a83(0x1d6))[_0x4c9a83(0x1b6)], _0xf49bf9 = (_0x4d572e[_0x4c9a83(0x1b8)](':')[0x0] < 0xc ? 'Gozen' : _0x4c9a83(0x1c4)) + '\x20' + jamJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x0]), _0x327144 = ''; if (_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1][_0x4c9a83(0x1b8)]('')[0x0] == '0') _0x327144 = menitJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]); else menitKelipatanJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]) != undefined ? _0x327144 = menitKelipatanJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]) : _0x327144 = '' + menitPuluhanJP['get'](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]['split']('')[0x0]) + (_0x4d572e['split'](':')[0x1]['split']('')[0x0] != 0x1 ? _0x4c9a83(0x1db) : '') + menitJP[_0x4c9a83(0x1dc)]('0' + _0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]['split']('')[0x1]); hourFormat[_0x4c9a83(0x1ee)] = _0x4d572e + '\x20/\x20' + (_0x4d572e['split'](':')[0x0] > 0xc ? _0x4d572e[_0x4c9a83(0x1b8)](':')[0x0] - 0xc : _0x4d572e['split'](':')[0x0]) + ':' + _0x4d572e['split'](':')[0x1] + '\x20' + (_0x4d572e[_0x4c9a83(0x1b8)](':')[0x0] < 0xc ? 'am' : 'pm'), textarea[_0x4c9a83(0x1ee)] = _0xf49bf9 + '\x20' + _0x327144; }</script>
 </body>
 
 </html>
