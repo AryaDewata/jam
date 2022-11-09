@@ -5,207 +5,657 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="https://github.com/aryadewata/konversi-jam">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>今何時ですか</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title></title>
+
+    <!-- CSS -->
     <style>
-        @import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
-        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap);
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            outline: 0;
-            font-family: Nunito
-        }
-
-        body {
-            height: 100vh;
-            overflow: hidden
-        }
+        /* OBFUSCATED BY CSSOBFUSCATOR.COM at 2022/11/09 02:10:23 */
+        @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap");
 
         #loading {
             position: fixed;
+        }
+
+        * {
+            padding-left: 0;
+        }
+
+        #loading {
             z-index: 10;
+        }
+
+        #loading,
+        body {
             height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            background: #fff;
-            color: #646464;
-            text-align: center;
-            transition: 1s
         }
 
-        #loading img {
-            margin: 0 auto;
-            width: 200px
-        }
-
-        .container {
+        [class~=container],
+        #header img {
             height: 100%;
-            background: #fff
+        }
+
+        [class~=container],
+        #loading {
+            background: white;
+        }
+
+        * {
+            padding-bottom: 0;
+        }
+
+        .vertical-center,
+        #header {
+            display: flex;
         }
 
         .vertical-center {
-            display: flex;
             flex-direction: column;
+        }
+
+        #loading {
+            width: 100vw;
+        }
+
+        * {
+            padding-right: 0;
+        }
+
+        * {
+            padding-top: 0;
+        }
+
+        .vertical-center {
             justify-content: center;
-            gap: 4px
+        }
+
+        #loading img {
+            margin-left: auto;
+        }
+
+        body,
+        #loading {
+            overflow: hidden;
+        }
+
+        * {
+            margin-left: 0;
+        }
+
+        *,
+        #loading img {
+            margin-bottom: 0;
+        }
+
+        #header,
+        .vertical-center {
+            gap: .041666667in;
+        }
+
+        [class~=clock] {
+            font-size: 1.125pc;
+        }
+
+        #loading {
+            color: #646464;
+        }
+
+        #loading {
+            text-align: center;
+        }
+
+        #loading {
+            transition: 2000ms;
+        }
+
+        #loading img {
+            margin-right: auto;
+        }
+
+        * {
+            margin-right: 0;
+        }
+
+        *,
+        #loading img {
+            margin-top: 0;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         #header {
-            padding: 10px;
+            padding-left: .104166667in;
+        }
+
+        [class~=clock] {
+            color: #787878;
+        }
+
+        [class~=header-text] {
+            font-family: "Noto Sans JP";
+        }
+
+        [class~=header-text] {
+            font-size: 12pt;
+        }
+
+        [class~=header-text] {
+            color: #505050;
+        }
+
+        [class~=header-text] {
+            letter-spacing: .020833333in;
+        }
+
+        #header {
+            padding-bottom: .104166667in;
+        }
+
+        #header {
+            padding-right: .104166667in;
+        }
+
+        * {
+            outline: none;
+        }
+
+        #header {
+            padding-top: .104166667in;
+        }
+
+        * {
+            font-family: "Nunito";
+        }
+
+        #header {
             height: 13%;
-            display: flex;
+        }
+
+        #header {
             justify-self: left;
-            gap: 4px;
-            box-shadow: 0 1px 3px #505050
         }
 
-        #header img {
-            height: 100%
+        #header {
+            box-shadow: 0 .0625pc 2.25pt #505050;
         }
 
-        .clock {
-            font-size: 18px;
-            color: #787878
+        #loading img {
+            width: 200px;
         }
 
-        .header-text {
-            font-family: 'Noto Sans JP';
-            font-size: 16px;
-            color: #505050;
-            letter-spacing: 2px
-        }
-
-        @media (max-width:480px) {
+        @media (max-width: 480px) {
             #header {
-                height: 12%
+                height: 12%;
             }
 
-            .clock {
-                font-size: 16px
+            [class~=clock] {
+                font-size: 1pc;
             }
 
-            .header-text {
-                font-size: 14px
+            [class~=header-text] {
+                font-size: .145833333in;
             }
         }
 
-        #main {
-            padding: 20px 0
-        }
-
-        .form {
-            margin: 20px auto;
-            width: 90%;
-            display: flex;
-            gap: 10px
-        }
-
-        input[type=time] {
-            padding: 4px 10px;
-            border-radius: 3px;
-            border: 1px solid #b4b4b4;
-            font-size: 18px;
-            color: #505050;
-            letter-spacing: 1px
-        }
-
-        input[type=time]:hover {
-            color: #8585ff;
-            border: 1px solid #8585ff
-        }
-
-        input[type=time]::-webkit-calendar-picker-indicator {
-            filter: invert(65%) sepia(13%) saturate(1%) hue-rotate(130deg) brightness(100%) contrast(100%)
+        [class~=form],
+        [class~=result] {
+            margin-left: auto;
         }
 
         button {
             cursor: pointer;
-            padding: 6px 20px;
-            background: #fff;
-            border-radius: 3px;
-            border: 1px solid #b4b4b4;
+        }
+
+        input[type="time"]:hover {
+            color: #8585ff;
+        }
+
+        [class~=result],
+        input[type="time"] {
+            padding-left: .104166667in;
+        }
+
+        [class~=form] {
+            margin-bottom: 15pt;
+        }
+
+        [class~=result],
+        [class~=form] {
+            margin-right: auto;
+        }
+
+        [class~=form] {
+            margin-top: 15pt;
+        }
+
+        input[type="time"] {
+            padding-bottom: 3pt;
+        }
+
+        [class~=result],
+        [class~=form] {
+            width: 90%;
+        }
+
+        [class~=result],
+        input[type="time"] {
+            padding-right: .104166667in;
+        }
+
+        button {
+            padding-left: .208333333in;
+        }
+
+        [class~=form] {
+            display: flex;
+        }
+
+        [class~=form] {
+            gap: 7.5pt;
+        }
+
+        [class~=result] {
+            cursor: default;
+        }
+
+        input[type="time"] {
+            padding-top: 3pt;
+        }
+
+        button {
+            padding-bottom: .375pc;
+        }
+
+        button {
+            padding-right: .208333333in;
+        }
+
+        [class~=result]:hover {
+            background: #f0f0f0;
+        }
+
+        button,
+        input[type="time"] {
+            border-radius: .03125in;
+        }
+
+        [class~=result] {
+            margin-bottom: 0;
+        }
+
+        input[type="time"]:hover,
+        [class~=result],
+        button,
+        input[type="time"] {
+            border-left-width: .010416667in;
+        }
+
+        input[type="time"],
+        input[type="time"]:hover,
+        [class~=result],
+        button {
+            border-bottom-width: .010416667in;
+        }
+
+        input[type="time"]:hover,
+        button,
+        input[type="time"],
+        [class~=result] {
+            border-right-width: .010416667in;
+        }
+
+        button {
+            padding-top: .375pc;
+        }
+
+        input[type="time"],
+        input[type="time"]:hover,
+        [class~=result],
+        button {
+            border-top-width: .010416667in;
+        }
+
+        [class~=result] {
+            margin-top: 0;
+        }
+
+        #main {
+            padding-left: 0;
+        }
+
+        input[type="time"],
+        button,
+        [class~=result],
+        input[type="time"]:hover {
+            border-left-style: solid;
+        }
+
+        button {
+            background: white;
+        }
+
+        [class~=result] {
+            padding-bottom: .104166667in;
+        }
+
+        [class~=result] {
+            padding-top: .104166667in;
+        }
+
+        button,
+        input[type="time"],
+        [class~=result],
+        input[type="time"]:hover {
+            border-bottom-style: solid;
+        }
+
+        button,
+        [class~=result],
+        input[type="time"]:hover,
+        input[type="time"] {
+            border-right-style: solid;
+        }
+
+        button,
+        [class~=result],
+        input[type="time"]:hover,
+        input[type="time"] {
+            border-top-style: solid;
+        }
+
+        input[type="time"],
+        button {
+            border-left-color: #b4b4b4;
+        }
+
+        input[type="time"],
+        button {
+            border-bottom-color: #b4b4b4;
+        }
+
+        input[type="time"],
+        button {
+            border-right-color: #b4b4b4;
+        }
+
+        input[type="time"],
+        button {
+            border-top-color: #b4b4b4;
+        }
+
+        input[type="time"],
+        button {
+            border-image: none;
+        }
+
+        button,
+        input[type="time"] {
             font-size: 18px;
-            color: #969696;
-            transition: .3s
+        }
+
+        #main {
+            padding-bottom: .208333333in;
+        }
+
+        input[type="time"] {
+            color: #505050;
+        }
+
+        button:hover,
+        input[type="time"]:hover {
+            border-left-color: #8585ff;
+        }
+
+        input[type="time"]:hover,
+        button:hover {
+            border-bottom-color: #8585ff;
+        }
+
+        input[type="time"] {
+            letter-spacing: .010416667in;
+        }
+
+        input[type="time"]::-webkit-calendar-picker-indicator {
+            filter: invert(65%) sepia(13%) saturate(1%) hue-rotate(130deg) brightness(100%) contrast(100%);
         }
 
         button:hover {
             color: #8585ff;
-            border: 1px solid #8585ff
         }
 
-        .result {
-            cursor: default;
-            margin: 0 auto;
-            padding: 10px;
-            width: 90%;
-            border: 1px solid #969696;
-            border-radius: 5px;
-            background: #e6e6e6;
-            transition: .2s
+        button:hover,
+        input[type="time"]:hover {
+            border-right-color: #8585ff;
         }
 
-        .result:hover {
-            background: #f0f0f0
+        [class~=result] {
+            border-left-color: #969696;
         }
 
-        .result p {
-            font-size: 18px;
-            color: #505050
+        [class~=result] {
+            border-bottom-color: #969696;
         }
 
-        #hour-format {
-            font-size: 14px
+        [class~=result] {
+            border-right-color: #969696;
+        }
+
+        button:hover {
+            border-left-width: .0625pc;
+        }
+
+        button:hover {
+            border-bottom-width: .0625pc;
+        }
+
+        [class~=result] {
+            border-top-color: #969696;
+        }
+
+        button:hover {
+            border-right-width: .0625pc;
+        }
+
+        button:hover {
+            border-top-width: .0625pc;
+        }
+
+        button {
+            color: #969696;
+        }
+
+        button {
+            transition: 300ms;
         }
 
         footer {
-            padding: 10px 0;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            background: #1e1e1e;
-            font-size: 14px;
-            color: #fff;
-            text-align: center
+            padding-left: 0;
         }
 
-        @media (max-width:480px) {
+        [class~=result] {
+            border-image: none;
+        }
+
+        button:hover {
+            border-left-style: solid;
+        }
+
+        button:hover {
+            border-bottom-style: solid;
+        }
+
+        [class~=result] {
+            border-radius: 5px;
+        }
+
+        footer {
+            padding-bottom: .625pc;
+        }
+
+        input[type="time"]:hover,
+        button:hover {
+            border-top-color: #8585ff;
+        }
+
+        [class~=result] {
+            background: #e6e6e6;
+        }
+
+        button:hover {
+            border-right-style: solid;
+        }
+
+        footer,
+        #main {
+            padding-right: 0;
+        }
+
+        input[type="time"]:hover {
+            border-image: none;
+        }
+
+        [class~=result] {
+            transition: 200ms;
+        }
+
+        button:hover {
+            border-top-style: solid;
+        }
+
+        footer {
+            padding-top: .625pc;
+        }
+
+        footer {
+            width: 100%;
+        }
+
+        footer {
+            height: 9%;
+        }
+
+        footer {
+            position: fixed;
+        }
+
+        footer {
+            bottom: 0;
+        }
+
+        footer {
+            display: flex;
+        }
+
+        footer {
+            justify-content: center;
+        }
+
+        footer {
+            gap: 7.5pt;
+        }
+
+        footer {
+            background: #1e1e1e;
+        }
+
+        button:hover {
+            border-image: none;
+        }
+
+        footer,
+        #hour-format {
+            font-size: 10.5pt;
+        }
+
+        [class~=result] p {
+            font-size: 1.125pc;
+        }
+
+        [class~=result] p {
+            color: #505050;
+        }
+
+        footer {
+            color: white;
+        }
+
+        #main {
+            padding-top: .208333333in;
+        }
+
+        footer img {
+            max-height: 85% !important;
+        }
+
+        @media (max-width: 480px) {
             footer {
-                font-size: 13px
+                font-size: 9.75pt;
             }
         }
     </style>
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="https://img.icons8.com/plasticine/2x/clock.png" type="image/x-icon">
+
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"
         integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="loading" class="vertical-center"><img src="loading.gif" alt="loading image">
+
+    <!-- Loading Screen -->
+    <div id="loading" class="vertical-center">
+        <img src="img/loading.gif" alt="loading image">
         <p>Mohon menunggu...</p>
     </div>
+
+    <!-- Container -->
     <div class="container">
-        <section id="header"><img src="jam.png" alt="gambar jam" title="gambar jam">
+
+        <!-- Header Section -->
+        <section id="header">
+            <img src="img/jam.png" alt="gambar jam" title="gambar jam" loading="lazy">
             <div class="vertical-center">
                 <p class="clock">10:45</p>
                 <p class="header-text" title="Imananjidesuka">今何時ですか</p>
             </div>
         </section>
+
+        <!-- Main Section -->
         <section id="main">
-            <div class="form"><input type="time" id="time-input"><button onclick="run()"
-                    title="Klik untuk mengkonversi">Konversi</button></div>
+
+            <div class="form">
+                <input type="time" id="time-input">
+                <button onclick="run()" title="Klik untuk mengkonversi">Konversi</button>
+            </div>
+
             <div class="result">
                 <p id="hour-format"></p>
                 <p id="result"></p>
             </div>
+
         </section>
-        <footer>Created by Software Engineering Students 2022.</footer>
+
+        <!-- Footer -->
+        <footer>
+            <div class="vertical-center">
+                <img src="img/stibal-developer-logo revisi.png" alt="logo smkti bali global singaraja">
+            </div>
+            <p class="vertical-center">Created by Software Engineering Students 2022.</p>
+        </footer>
+
     </div>
-    <script>function _0x5860(_0x5dcfb2, _0x5b3548) { var _0x1f5043 = _0x1f50(); return _0x5860 = function (_0x586072, _0x8cfc03) { _0x586072 = _0x586072 - 0x1b1; var _0x3d581d = _0x1f5043[_0x586072]; return _0x3d581d; }, _0x5860(_0x5dcfb2, _0x5b3548); } function _0x1f50() { var _0x1f2467 = ['1972326hyZwJS', '1980648swfKtc', 'remove', '3046750DYlomF', '1526231NMyBnM', '16mJVcPG', '762089sHnuXS', '11322IcZNkc', '#loading', 'opacity', 'css', '576264osfwPl', '150tJhnhz']; _0x1f50 = function () { return _0x1f2467; }; return _0x1f50(); } (function (_0x15ae57, _0x1db0ac) { var _0x13d3ea = _0x5860, _0x33a624 = _0x15ae57(); while (!![]) { try { var _0x192356 = -parseInt(_0x13d3ea(0x1b8)) / 0x1 + parseInt(_0x13d3ea(0x1b1)) / 0x2 * (parseInt(_0x13d3ea(0x1b9)) / 0x3) + parseInt(_0x13d3ea(0x1bd)) / 0x4 + parseInt(_0x13d3ea(0x1b5)) / 0x5 + parseInt(_0x13d3ea(0x1b2)) / 0x6 + parseInt(_0x13d3ea(0x1b6)) / 0x7 * (-parseInt(_0x13d3ea(0x1b7)) / 0x8) + parseInt(_0x13d3ea(0x1b3)) / 0x9; if (_0x192356 === _0x1db0ac) break; else _0x33a624['push'](_0x33a624['shift']()); } catch (_0x4860ae) { _0x33a624['push'](_0x33a624['shift']()); } } }(_0x1f50, 0x5e820), $(document)['ready'](function () { setTimeout(() => { var _0x5a5951 = _0x5860; $('#loading')[_0x5a5951(0x1bc)](_0x5a5951(0x1bb), '0%'), setTimeout(() => { var _0x3f17a1 = _0x5a5951; $(_0x3f17a1(0x1ba))[_0x3f17a1(0x1b4)](); }, 0x3e8); }, 0x3e8); }));</script>
-    <script>const _0x4626d6 = _0x1848; (function (_0xdc562c, _0x1f52d8) { const _0x328756 = _0x1848, _0x4f18ae = _0xdc562c(); while (!![]) { try { const _0x4ef209 = -parseInt(_0x328756(0x20b)) / 0x1 * (-parseInt(_0x328756(0x203)) / 0x2) + parseInt(_0x328756(0x1df)) / 0x3 * (-parseInt(_0x328756(0x1f2)) / 0x4) + -parseInt(_0x328756(0x1fd)) / 0x5 * (-parseInt(_0x328756(0x1f9)) / 0x6) + parseInt(_0x328756(0x1e2)) / 0x7 + -parseInt(_0x328756(0x1db)) / 0x8 + parseInt(_0x328756(0x1ee)) / 0x9 * (-parseInt(_0x328756(0x1f8)) / 0xa) + parseInt(_0x328756(0x202)) / 0xb; if (_0x4ef209 === _0x1f52d8) break; else _0x4f18ae['push'](_0x4f18ae['shift']()); } catch (_0xa6dcf5) { _0x4f18ae['push'](_0x4f18ae['shift']()); } } }(_0x1af3, 0xc0ef4), $(document)[_0x4626d6(0x1e7)](_0x4626d6(0x1e8), function (_0x1443b4) { return ![]; }), $(document)['on']('keydown', function (_0x29db23) { const _0x357beb = _0x4626d6; if (_0x29db23[_0x357beb(0x1fb)] == 0x7b) return ![]; if (_0x29db23[_0x357beb(0x201)] && _0x29db23['shiftKey'] && _0x29db23[_0x357beb(0x1fb)] == 'I'[_0x357beb(0x1da)](0x0)) return ![]; if (_0x29db23[_0x357beb(0x201)] && _0x29db23[_0x357beb(0x1f7)] && _0x29db23['keyCode'] == 'C'[_0x357beb(0x1da)](0x0)) return ![]; if (_0x29db23[_0x357beb(0x201)] && _0x29db23['shiftKey'] && _0x29db23[_0x357beb(0x1fb)] == 'J'[_0x357beb(0x1da)](0x0)) return ![]; if (_0x29db23[_0x357beb(0x201)] && _0x29db23[_0x357beb(0x1fb)] == 'U'['charCodeAt'](0x0)) return ![]; })); function _0x1848(_0x34f579, _0x4aad96) { const _0x1af3b2 = _0x1af3(); return _0x1848 = function (_0x18487e, _0x59545a) { _0x18487e = _0x18487e - 0x1d7; let _0x50da28 = _0x1af3b2[_0x18487e]; return _0x50da28; }, _0x1848(_0x34f579, _0x4aad96); } const clock = document[_0x4626d6(0x1e9)](_0x4626d6(0x1fa)); clock['innerHTML'] = '' + (new Date()[_0x4626d6(0x1e4)]() < 0xa ? '0' : '') + new Date()[_0x4626d6(0x1e4)]() + ':' + (new Date()[_0x4626d6(0x1f3)]() < 0xa ? '0' : '') + new Date()[_0x4626d6(0x1f3)](); function displayClock() { const _0x156874 = _0x4626d6; clock[_0x156874(0x204)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()[_0x156874(0x1e4)]() + ':' + (new Date()['getMinutes']() < 0xa ? '0' : '') + new Date()[_0x156874(0x1f3)](); } setInterval(() => { displayClock(); }, 0x1388); const hourFormat = document[_0x4626d6(0x1e9)](_0x4626d6(0x206)), textarea = document[_0x4626d6(0x1e9)](_0x4626d6(0x205)); let jamJP = new Map([['00', 'juu-ni\x20ji'], ['01', _0x4626d6(0x1f0)], ['02', _0x4626d6(0x1f6)], ['03', _0x4626d6(0x1fc)], ['04', _0x4626d6(0x1eb)], ['05', _0x4626d6(0x1d7)], ['06', _0x4626d6(0x1e1)], ['07', _0x4626d6(0x1f4)], ['08', _0x4626d6(0x1e0)], ['09', _0x4626d6(0x1ea)], ['10', _0x4626d6(0x1dc)], ['11', 'juu-ichi\x20ji'], ['12', 'juu-ni\x20ji'], ['13', _0x4626d6(0x1f0)], ['14', _0x4626d6(0x1f6)], ['15', _0x4626d6(0x1fc)], ['16', _0x4626d6(0x1eb)], ['17', _0x4626d6(0x1d7)], ['18', 'roku\x20ji'], ['19', _0x4626d6(0x1f4)], ['20', _0x4626d6(0x1e0)], ['21', _0x4626d6(0x1ea)], ['22', 'juu\x20ji'], ['23', _0x4626d6(0x209)]]), menitJP = new Map([['00', ''], ['01', 'ippun'], ['02', 'nifun'], ['03', _0x4626d6(0x208)], ['04', 'yonpun'], ['05', _0x4626d6(0x1e5)], ['06', 'roppun'], ['07', 'nanafun'], ['08', _0x4626d6(0x1ff)], ['09', _0x4626d6(0x207)]]), menitKelipatanJP = new Map([['10', _0x4626d6(0x1e3)], ['20', 'ni\x20juppun'], ['30', 'san\x20juppun'], ['40', _0x4626d6(0x1fe)], ['50', _0x4626d6(0x200)]]), menitPuluhanJP = new Map([['1', _0x4626d6(0x1ed)], ['2', _0x4626d6(0x1ef)], ['3', 'san-'], ['4', _0x4626d6(0x1ec)], ['5', _0x4626d6(0x1f5)]]); function _0x1af3() { const _0x369873 = ['ni\x20ji', 'shiftKey', '30QxjHCV', '4962vFCxHq', '.clock', 'keyCode', 'san\x20ji', '4785rPLzPQ', 'yon\x20juppun', 'happun', 'go\x20juppun', 'ctrlKey', '3989469OOSdIw', '20FtJRnV', 'innerHTML', '#result', '#hour-format', 'kyuufun', 'sanpun', 'juu-ichi\x20ji', '#time-input', '33137Qywuuq', 'go\x20ji', 'split', 'value', 'charCodeAt', '1863984sWbWRv', 'juu\x20ji', 'juu\x20', 'get', '481092eJeHBf', 'hachi\x20ji', 'roku\x20ji', '7528213FgodbV', 'juppun', 'getHours', 'gofun', 'Gogo', 'bind', 'contextmenu', 'querySelector', 'ku\x20ji', 'yo\x20ji', 'yon-', 'juu-', '3169791HgPBoz', 'ni-', 'ichi\x20ji', 'Gozen', '12rpRBRL', 'getMinutes', 'shichi\x20ji', 'go-']; _0x1af3 = function () { return _0x369873; }; return _0x1af3(); } function run() { const _0x453045 = _0x4626d6; let _0x3bc80b = document[_0x453045(0x1e9)](_0x453045(0x20a))[_0x453045(0x1d9)], _0x2b05ac = (_0x3bc80b[_0x453045(0x1d8)](':')[0x0] < 0xc ? _0x453045(0x1f1) : _0x453045(0x1e6)) + '\x20' + jamJP[_0x453045(0x1de)](_0x3bc80b[_0x453045(0x1d8)](':')[0x0]), _0x47bf1b = ''; if (_0x3bc80b['split'](':')[0x1][_0x453045(0x1d8)]('')[0x0] == '0') _0x47bf1b = menitJP[_0x453045(0x1de)](_0x3bc80b[_0x453045(0x1d8)](':')[0x1]); else menitKelipatanJP[_0x453045(0x1de)](_0x3bc80b[_0x453045(0x1d8)](':')[0x1]) != undefined ? _0x47bf1b = menitKelipatanJP[_0x453045(0x1de)](_0x3bc80b[_0x453045(0x1d8)](':')[0x1]) : _0x47bf1b = '' + menitPuluhanJP[_0x453045(0x1de)](_0x3bc80b[_0x453045(0x1d8)](':')[0x1][_0x453045(0x1d8)]('')[0x0]) + (_0x3bc80b[_0x453045(0x1d8)](':')[0x1][_0x453045(0x1d8)]('')[0x0] != 0x1 ? _0x453045(0x1dd) : '') + menitJP[_0x453045(0x1de)]('0' + _0x3bc80b[_0x453045(0x1d8)](':')[0x1][_0x453045(0x1d8)]('')[0x1]); hourFormat[_0x453045(0x204)] = _0x3bc80b + '\x20/\x20' + (_0x3bc80b['split'](':')[0x0] > 0xc ? _0x3bc80b[_0x453045(0x1d8)](':')[0x0] - 0xc : _0x3bc80b[_0x453045(0x1d8)](':')[0x0]) + ':' + _0x3bc80b['split'](':')[0x1] + '\x20' + (_0x3bc80b[_0x453045(0x1d8)](':')[0x0] < 0xc ? 'am' : 'pm'), textarea[_0x453045(0x204)] = _0x2b05ac + '\x20' + _0x47bf1b; }</script>
+
+    <!-- Javascript -->
+    <script>var _0x18bacc = _0x45b7; function _0x45b7(_0x320541, _0x2eb1b4) { var _0x652cd6 = _0x652c(); return _0x45b7 = function (_0x45b7c9, _0xdd7ca5) { _0x45b7c9 = _0x45b7c9 - 0x17e; var _0x55384f = _0x652cd6[_0x45b7c9]; return _0x55384f; }, _0x45b7(_0x320541, _0x2eb1b4); } (function (_0x4b269e, _0xb94f7a) { var _0x12dc3c = _0x45b7, _0x59fb44 = _0x4b269e(); while (!![]) { try { var _0x47be25 = -parseInt(_0x12dc3c(0x183)) / 0x1 + -parseInt(_0x12dc3c(0x188)) / 0x2 * (parseInt(_0x12dc3c(0x18f)) / 0x3) + parseInt(_0x12dc3c(0x186)) / 0x4 * (parseInt(_0x12dc3c(0x18a)) / 0x5) + parseInt(_0x12dc3c(0x182)) / 0x6 * (parseInt(_0x12dc3c(0x191)) / 0x7) + parseInt(_0x12dc3c(0x184)) / 0x8 + -parseInt(_0x12dc3c(0x190)) / 0x9 * (-parseInt(_0x12dc3c(0x187)) / 0xa) + parseInt(_0x12dc3c(0x181)) / 0xb * (-parseInt(_0x12dc3c(0x18d)) / 0xc); if (_0x47be25 === _0xb94f7a) break; else _0x59fb44['push'](_0x59fb44['shift']()); } catch (_0x2ccc07) { _0x59fb44['push'](_0x59fb44['shift']()); } } }(_0x652c, 0x67d68), $(document)[_0x18bacc(0x17f)](function () { var _0x5aa560 = _0x18bacc; setTimeout(() => { var _0x54796d = _0x45b7; $(_0x54796d(0x18c))['css'](_0x54796d(0x17e), '0%'), setTimeout(() => { var _0x5978e7 = _0x54796d; $(_0x5978e7(0x18c))[_0x5978e7(0x18e)](); }, 0x7d0); }, 0x7d0), document[_0x5aa560(0x192)](_0x5aa560(0x189))[_0x5aa560(0x18b)] = _0x5aa560(0x185), document[_0x5aa560(0x192)](_0x5aa560(0x180))[_0x5aa560(0x18b)] = _0x5aa560(0x185); })); function _0x652c() { var _0x4b7075 = ['312257OSnXDx', '153372rPFXUJ', '601896pegCPa', '1996944iyuMIO', '今何時ですか', '16JvNPwU', '18680qmfAuR', '1486fiLAVz', 'title', '123555XySTTM', 'innerHTML', '#loading', '156qIFZjX', 'remove', '1473mDfJox', '2988mtNghv', '217IJyZbK', 'querySelector', 'opacity', 'ready', '.header-text']; _0x652c = function () { return _0x4b7075; }; return _0x652c(); }</script>
+    <script>const _0x35d89c = _0x4482; function _0x4482(_0x25075c, _0x3f40cb) { const _0x3888fc = _0x3888(); return _0x4482 = function (_0x448283, _0x3a6dbd) { _0x448283 = _0x448283 - 0x9f; let _0x4bd1ac = _0x3888fc[_0x448283]; return _0x4bd1ac; }, _0x4482(_0x25075c, _0x3f40cb); } (function (_0x3e261d, _0xbf3f1f) { const _0x51f525 = _0x4482, _0x12aecb = _0x3e261d(); while (!![]) { try { const _0x4885dd = parseInt(_0x51f525(0xba)) / 0x1 + parseInt(_0x51f525(0xbc)) / 0x2 * (-parseInt(_0x51f525(0xa4)) / 0x3) + -parseInt(_0x51f525(0xc3)) / 0x4 * (parseInt(_0x51f525(0xa6)) / 0x5) + -parseInt(_0x51f525(0xc1)) / 0x6 + parseInt(_0x51f525(0xd4)) / 0x7 * (parseInt(_0x51f525(0xc0)) / 0x8) + -parseInt(_0x51f525(0xbf)) / 0x9 * (-parseInt(_0x51f525(0xb4)) / 0xa) + parseInt(_0x51f525(0xc6)) / 0xb * (parseInt(_0x51f525(0xcd)) / 0xc); if (_0x4885dd === _0xbf3f1f) break; else _0x12aecb['push'](_0x12aecb['shift']()); } catch (_0x50a49a) { _0x12aecb['push'](_0x12aecb['shift']()); } } }(_0x3888, 0x88455), $(document)[_0x35d89c(0xd9)](_0x35d89c(0xb5), function (_0x539481) { return ![]; }), $(document)['on']('keydown', function (_0x2c7699) { const _0x49e57b = _0x35d89c; if (_0x2c7699[_0x49e57b(0xb6)] == 0x7b) return ![]; if (_0x2c7699['ctrlKey'] && _0x2c7699[_0x49e57b(0xcc)] && _0x2c7699[_0x49e57b(0xb6)] == 'I'['charCodeAt'](0x0)) return ![]; if (_0x2c7699[_0x49e57b(0xd2)] && _0x2c7699[_0x49e57b(0xcc)] && _0x2c7699[_0x49e57b(0xb6)] == 'C'[_0x49e57b(0xa1)](0x0)) return ![]; if (_0x2c7699[_0x49e57b(0xd2)] && _0x2c7699['shiftKey'] && _0x2c7699['keyCode'] == 'J'[_0x49e57b(0xa1)](0x0)) return ![]; if (_0x2c7699[_0x49e57b(0xd2)] && _0x2c7699[_0x49e57b(0xb6)] == 'U'['charCodeAt'](0x0)) return ![]; })); const clock = document[_0x35d89c(0xb0)](_0x35d89c(0xa2)); clock[_0x35d89c(0xc9)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()['getHours']() + ':' + (new Date()[_0x35d89c(0xaa)]() < 0xa ? '0' : '') + new Date()[_0x35d89c(0xaa)](); function displayClock() { const _0x7abd2f = _0x35d89c; clock[_0x7abd2f(0xc9)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()[_0x7abd2f(0xd8)]() + ':' + (new Date()['getMinutes']() < 0xa ? '0' : '') + new Date()['getMinutes'](); } setInterval(() => { displayClock(); }, 0x1388); function _0x3888() { const _0x128d57 = ['go\x20juppun', '480188cyGgbi', 'happun', '148186vWszwG', '#hour-format', 'nanafun', '9koHTFK', '95176ueAeGU', '745590aqQKcj', '#result', '4yOSGVr', 'ni\x20juppun', 'san\x20juppun', '11xRzqvY', 'roppun', 'Gogo', 'innerHTML', 'juu-ichi\x20ji', 'value', 'shiftKey', '2053572WocXyo', 'ippun', 'juu\x20ji', 'go\x20ji', 'juu-ni\x20ji', 'ctrlKey', 'yon-', '7gnVAPc', 'go-', 'ku\x20ji', 'sanpun', 'getHours', 'bind', 'ni\x20ji', 'shichi\x20ji', 'charCodeAt', '.clock', 'yon\x20juppun', '6TcRqYh', 'yonpun', '3213115mWCStL', 'roku\x20ji', 'yo\x20ji', 'split', 'getMinutes', 'hachi\x20ji', 'san\x20ji', 'gofun', 'ni-', 'ichi\x20ji', 'querySelector', 'nifun', 'juu\x20', 'juu-', '8100230KvGdMA', 'contextmenu', 'keyCode', 'Gozen', 'get']; _0x3888 = function () { return _0x128d57; }; return _0x3888(); } const hourFormat = document[_0x35d89c(0xb0)](_0x35d89c(0xbd)), textarea = document['querySelector'](_0x35d89c(0xc2)); let jamJP = new Map([['00', _0x35d89c(0xd1)], ['01', _0x35d89c(0xaf)], ['02', _0x35d89c(0x9f)], ['03', _0x35d89c(0xac)], ['04', _0x35d89c(0xa8)], ['05', _0x35d89c(0xd0)], ['06', 'roku\x20ji'], ['07', _0x35d89c(0xa0)], ['08', _0x35d89c(0xab)], ['09', _0x35d89c(0xd6)], ['10', _0x35d89c(0xcf)], ['11', _0x35d89c(0xca)], ['12', _0x35d89c(0xd1)], ['13', 'ichi\x20ji'], ['14', 'ni\x20ji'], ['15', _0x35d89c(0xac)], ['16', _0x35d89c(0xa8)], ['17', _0x35d89c(0xd0)], ['18', _0x35d89c(0xa7)], ['19', _0x35d89c(0xa0)], ['20', _0x35d89c(0xab)], ['21', _0x35d89c(0xd6)], ['22', _0x35d89c(0xcf)], ['23', _0x35d89c(0xca)]]), menitJP = new Map([['00', ''], ['01', _0x35d89c(0xce)], ['02', _0x35d89c(0xb1)], ['03', _0x35d89c(0xd7)], ['04', _0x35d89c(0xa5)], ['05', _0x35d89c(0xad)], ['06', _0x35d89c(0xc7)], ['07', _0x35d89c(0xbe)], ['08', _0x35d89c(0xbb)], ['09', 'kyuufun']]), menitKelipatanJP = new Map([['10', 'juppun'], ['20', _0x35d89c(0xc4)], ['30', _0x35d89c(0xc5)], ['40', _0x35d89c(0xa3)], ['50', _0x35d89c(0xb9)]]), menitPuluhanJP = new Map([['1', _0x35d89c(0xb3)], ['2', _0x35d89c(0xae)], ['3', 'san-'], ['4', _0x35d89c(0xd3)], ['5', _0x35d89c(0xd5)]]); function run() { const _0x4aea7d = _0x35d89c; let _0x5915d9 = document[_0x4aea7d(0xb0)]('#time-input')[_0x4aea7d(0xcb)], _0xd772e6 = (_0x5915d9['split'](':')[0x0] < 0xc ? _0x4aea7d(0xb7) : _0x4aea7d(0xc8)) + '\x20' + jamJP[_0x4aea7d(0xb8)](_0x5915d9[_0x4aea7d(0xa9)](':')[0x0]), _0x583cc5 = ''; if (_0x5915d9[_0x4aea7d(0xa9)](':')[0x1][_0x4aea7d(0xa9)]('')[0x0] == '0') _0x583cc5 = menitJP['get'](_0x5915d9[_0x4aea7d(0xa9)](':')[0x1]); else menitKelipatanJP[_0x4aea7d(0xb8)](_0x5915d9[_0x4aea7d(0xa9)](':')[0x1]) != undefined ? _0x583cc5 = menitKelipatanJP[_0x4aea7d(0xb8)](_0x5915d9['split'](':')[0x1]) : _0x583cc5 = '' + menitPuluhanJP['get'](_0x5915d9[_0x4aea7d(0xa9)](':')[0x1]['split']('')[0x0]) + (_0x5915d9['split'](':')[0x1]['split']('')[0x0] != 0x1 ? _0x4aea7d(0xb2) : '') + menitJP['get']('0' + _0x5915d9[_0x4aea7d(0xa9)](':')[0x1][_0x4aea7d(0xa9)]('')[0x1]); hourFormat[_0x4aea7d(0xc9)] = _0x5915d9 + '\x20/\x20' + (_0x5915d9['split'](':')[0x0] > 0xc ? _0x5915d9[_0x4aea7d(0xa9)](':')[0x0] - 0xc : _0x5915d9[_0x4aea7d(0xa9)](':')[0x0]) + ':' + _0x5915d9[_0x4aea7d(0xa9)](':')[0x1] + '\x20' + (_0x5915d9[_0x4aea7d(0xa9)](':')[0x0] < 0xc ? 'am' : 'pm'), textarea[_0x4aea7d(0xc9)] = _0xd772e6 + '\x20' + _0x583cc5; }</script>
+
 </body>
 
 </html>
