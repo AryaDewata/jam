@@ -1,629 +1,2 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="author" content="https://github.com/aryadewata">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>今何時ですか</title>
-    <style>
-        @import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
-        @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@200&display=swap);
-
-        * {
-            padding-left: 0
-        }
-
-        * {
-            padding-bottom: 0
-        }
-
-        #loading {
-            position: fixed
-        }
-
-        #loading img {
-            margin-left: auto
-        }
-
-        #loading {
-            z-index: 10
-        }
-
-        #loading,
-        body {
-            height: 100vh
-        }
-
-        #loading {
-            width: 100vw
-        }
-
-        * {
-            padding-right: 0
-        }
-
-        #loading,
-        body {
-            overflow: hidden
-        }
-
-        * {
-            padding-top: 0
-        }
-
-        #header img,
-        [class~=container] {
-            height: 100%
-        }
-
-        #loading,
-        [class~=container] {
-            background: #fff
-        }
-
-        * {
-            margin-left: 0
-        }
-
-        #loading img,
-        * {
-            margin-bottom: 0
-        }
-
-        #loading {
-            color: #646464
-        }
-
-        * {
-            margin-right: 0
-        }
-
-        #loading {
-            text-align: center
-        }
-
-        #loading {
-            transition: 2s
-        }
-
-        #header {
-            padding-left: .625pc
-        }
-
-        #header {
-            padding-bottom: .625pc
-        }
-
-        #header,
-        [class~=vertical-center] {
-            display: flex
-        }
-
-        #header {
-            padding-right: .625pc
-        }
-
-        #loading img,
-        * {
-            margin-top: 0
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        [class~=vertical-center] {
-            flex-direction: column
-        }
-
-        #header {
-            padding-top: .625pc
-        }
-
-        [class~=vertical-center] {
-            justify-content: center
-        }
-
-        #header {
-            height: 13%
-        }
-
-        #header,
-        [class~=vertical-center] {
-            gap: .25pc
-        }
-
-        * {
-            outline: 0
-        }
-
-        #header {
-            justify-self: left
-        }
-
-        #loading img {
-            margin-right: auto
-        }
-
-        #loading img {
-            width: 200px
-        }
-
-        [class~=clock] {
-            font-size: 18px
-        }
-
-        #header {
-            box-shadow: 0 1px 2.25pt #505050
-        }
-
-        * {
-            font-family: Nunito
-        }
-
-        [class~=clock] {
-            color: #787878
-        }
-
-        [class~=header-text] {
-            font-family: "Noto Sans JP"
-        }
-
-        [class~=header-text] {
-            font-size: 12pt
-        }
-
-        [class~=header-text] {
-            color: #505050
-        }
-
-        [class~=header-text] {
-            letter-spacing: 1.5pt
-        }
-
-        @media (max-width:480px) {
-            [class~=clock] {
-                font-size: 12pt
-            }
-
-            [class~=header-text] {
-                font-size: 10.5pt
-            }
-
-            #header {
-                height: 12%
-            }
-        }
-
-        [class~=form],
-        [class~=result] {
-            margin-left: auto
-        }
-
-        button {
-            cursor: pointer
-        }
-
-        [class~=form] {
-            margin-bottom: 15pt
-        }
-
-        [class~=result],
-        input[type=time] {
-            padding-left: .625pc
-        }
-
-        input[type=time]:hover {
-            color: #8585ff
-        }
-
-        [class~=form],
-        [class~=result] {
-            margin-right: auto
-        }
-
-        button {
-            padding-left: .208333333in
-        }
-
-        input[type=time] {
-            padding-bottom: .041666667in
-        }
-
-        [class~=result],
-        input[type=time] {
-            padding-right: .625pc
-        }
-
-        button {
-            padding-bottom: .0625in
-        }
-
-        input[type=time]:hover {
-            background: rgba(133, 133, 255, .1)
-        }
-
-        input[type=time] {
-            padding-top: .041666667in
-        }
-
-        [class~=form] {
-            margin-top: 15pt
-        }
-
-        button {
-            padding-right: .208333333in
-        }
-
-        button,
-        input[type=time] {
-            border-radius: 2.25pt
-        }
-
-        button {
-            padding-top: .0625in
-        }
-
-        [class~=form],
-        [class~=result] {
-            width: 90%
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-left-width: .010416667in
-        }
-
-        button {
-            background: #fff
-        }
-
-        [class~=form] {
-            display: flex
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-bottom-width: .010416667in
-        }
-
-        [class~=form] {
-            gap: 7.5pt
-        }
-
-        [class~=result] {
-            cursor: default
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-right-width: .0625pc
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-top-width: .0625pc
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-left-style: solid
-        }
-
-        #main {
-            padding-left: 0
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-bottom-style: solid
-        }
-
-        [class~=result] {
-            margin-bottom: 0
-        }
-
-        [class~=result] {
-            margin-top: 0
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-right-style: solid
-        }
-
-        [class~=result],
-        button,
-        input[type=time],
-        input[type=time]:hover {
-            border-top-style: solid
-        }
-
-        #main {
-            padding-bottom: 15pt
-        }
-
-        button,
-        input[type=time] {
-            border-left-color: #b4b4b4
-        }
-
-        #main,
-        footer {
-            padding-right: 0
-        }
-
-        [class~=result],
-        footer {
-            padding-bottom: .104166667in
-        }
-
-        button,
-        input[type=time] {
-            border-bottom-color: #b4b4b4
-        }
-
-        button,
-        input[type=time] {
-            border-right-color: #b4b4b4
-        }
-
-        [class~=result],
-        footer {
-            padding-top: .104166667in
-        }
-
-        button,
-        input[type=time] {
-            border-top-color: #b4b4b4
-        }
-
-        button,
-        input[type=time] {
-            border-image: none
-        }
-
-        #main {
-            padding-top: 15pt
-        }
-
-        [class~=result]:hover {
-            background: #f0f0f0
-        }
-
-        button,
-        input[type=time] {
-            font-size: 18px
-        }
-
-        [class~=result] {
-            border-left-color: #969696
-        }
-
-        input[type=time] {
-            color: #505050
-        }
-
-        input[type=time] {
-            letter-spacing: .0625pc
-        }
-
-        button {
-            color: #969696
-        }
-
-        button,
-        input[type=time] {
-            transition: .3s
-        }
-
-        footer {
-            padding-left: 0
-        }
-
-        input[type=time]::-webkit-calendar-picker-indicator {
-            filter: invert(65%) sepia(13%) saturate(1%) hue-rotate(130deg) brightness(100%) contrast(100%)
-        }
-
-        button:hover {
-            color: #8585ff
-        }
-
-        button:hover {
-            background: rgba(133, 133, 255, .1)
-        }
-
-        [class~=result] {
-            border-bottom-color: #969696
-        }
-
-        footer {
-            width: 100%
-        }
-
-        button:hover {
-            border-left-width: .0625pc
-        }
-
-        button:hover,
-        input[type=time]:hover {
-            border-left-color: #8585ff
-        }
-
-        button:hover {
-            border-bottom-width: .0625pc
-        }
-
-        [class~=result] {
-            border-right-color: #969696
-        }
-
-        footer {
-            height: 8%
-        }
-
-        footer {
-            position: fixed
-        }
-
-        button:hover {
-            border-right-width: .0625pc
-        }
-
-        button:hover {
-            border-top-width: .0625pc
-        }
-
-        button:hover {
-            border-left-style: solid
-        }
-
-        [class~=result] {
-            border-top-color: #969696
-        }
-
-        button:hover {
-            border-bottom-style: solid
-        }
-
-        footer {
-            bottom: 0
-        }
-
-        button:hover {
-            border-right-style: solid
-        }
-
-        button:hover {
-            border-top-style: solid
-        }
-
-        footer {
-            display: flex
-        }
-
-        [class~=result] {
-            border-image: none
-        }
-
-        footer {
-            justify-content: center
-        }
-
-        footer {
-            gap: .375pc
-        }
-
-        button:hover,
-        input[type=time]:hover {
-            border-bottom-color: #8585ff
-        }
-
-        footer {
-            background: #1e1e1e
-        }
-
-        [class~=result] {
-            border-radius: .3125pc
-        }
-
-        button:hover,
-        input[type=time]:hover {
-            border-right-color: #8585ff
-        }
-
-        #hour-format,
-        footer {
-            font-size: 14px
-        }
-
-        [class~=result] {
-            background: #e6e6e6
-        }
-
-        button:hover,
-        input[type=time]:hover {
-            border-top-color: #8585ff
-        }
-
-        [class~=result] {
-            transition: .2s
-        }
-
-        button:hover,
-        input[type=time]:hover {
-            border-image: none
-        }
-
-        [class~=result] p {
-            font-size: 1.125pc
-        }
-
-        footer {
-            color: #fff
-        }
-
-        [class~=result] p {
-            color: #505050
-        }
-
-        footer img {
-            max-height: 80% !important
-        }
-
-        @media (max-width:480px) {
-            footer {
-                font-size: 9pt
-            }
-        }
-    </style>
-    <link rel="shortcut icon" href="https://img.icons8.com/plasticine/2x/clock.png" type="image/x-icon">
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div id="loading" class="vertical-center"><img src="img/loading.gif" alt="loading image">
-        <p>Mohon menunggu...</p>
-    </div>
-    <div class="container">
-        <section id="header"><img src="img/jam.png" alt="gambar jam" title="gambar jam" loading="lazy">
-            <div class="vertical-center">
-                <p class="clock">10:45</p>
-                <p class="header-text" title="Imananjidesuka">今何時ですか</p>
-            </div>
-        </section>
-        <section id="main">
-            <div class="form"><input type="time" id="time-input"><button onclick="run()"
-                    title="Klik untuk mengkonversi">Konversi</button></div>
-            <div class="result">
-                <p id="hour-format"></p>
-                <p id="result"></p>
-            </div>
-        </section>
-        <footer>
-            <div class="vertical-center"><img src="img/stibal-developer-logo revisi.png"
-                    alt="logo smkti bali global singaraja"></div>
-            <p class="vertical-center">Created by Software Engineering Students 2022.</p>
-        </footer>
-    </div>
-    <script>const _0x56ba9a = _0x3e37; (function (_0x2dfccc, _0x23938e) { const _0x4e0e6a = _0x3e37, _0x25c2cc = _0x2dfccc(); while (!![]) { try { const _0x4c6895 = parseInt(_0x4e0e6a(0x1d5)) / 0x1 + parseInt(_0x4e0e6a(0x1c7)) / 0x2 * (-parseInt(_0x4e0e6a(0x1c5)) / 0x3) + parseInt(_0x4e0e6a(0x1d0)) / 0x4 * (-parseInt(_0x4e0e6a(0x1c2)) / 0x5) + parseInt(_0x4e0e6a(0x1ea)) / 0x6 * (parseInt(_0x4e0e6a(0x1c1)) / 0x7) + parseInt(_0x4e0e6a(0x1de)) / 0x8 + -parseInt(_0x4e0e6a(0x1b9)) / 0x9 * (parseInt(_0x4e0e6a(0x1be)) / 0xa) + parseInt(_0x4e0e6a(0x1cb)) / 0xb; if (_0x4c6895 === _0x23938e) break; else _0x25c2cc['push'](_0x25c2cc['shift']()); } catch (_0x309583) { _0x25c2cc['push'](_0x25c2cc['shift']()); } } }(_0x14d1, 0x32df6), $(document)[_0x56ba9a(0x1ce)](function () { setTimeout(() => { const _0xc0a8d2 = _0x3e37; $(_0xc0a8d2(0x1e9))[_0xc0a8d2(0x1ec)]('opacity', '0%'), setTimeout(() => { const _0x61ea34 = _0xc0a8d2; $(_0x61ea34(0x1e9))[_0x61ea34(0x1bd)](); }, 0x7d0); }, 0x7d0); }), $(document)['bind'](_0x56ba9a(0x1b7), function (_0x2bdc14) { return ![]; }), $(document)['on'](_0x56ba9a(0x1c3), function (_0x3e1b50) { const _0x4eb3de = _0x56ba9a; if (_0x3e1b50[_0x4eb3de(0x1ca)] == 0x7b) return ![]; if (_0x3e1b50[_0x4eb3de(0x1e7)] && _0x3e1b50[_0x4eb3de(0x1d2)] && _0x3e1b50[_0x4eb3de(0x1ca)] == 'I'[_0x4eb3de(0x1e8)](0x0)) return ![]; if (_0x3e1b50[_0x4eb3de(0x1e7)] && _0x3e1b50[_0x4eb3de(0x1d2)] && _0x3e1b50[_0x4eb3de(0x1ca)] == 'C'['charCodeAt'](0x0)) return ![]; if (_0x3e1b50['ctrlKey'] && _0x3e1b50[_0x4eb3de(0x1d2)] && _0x3e1b50[_0x4eb3de(0x1ca)] == 'J'['charCodeAt'](0x0)) return ![]; if (_0x3e1b50[_0x4eb3de(0x1e7)] && _0x3e1b50['keyCode'] == 'U'[_0x4eb3de(0x1e8)](0x0)) return ![]; })); function _0x14d1() { const _0x19a1bd = ['8ZpUHxK', 'juu-ichi\x20ji', 'shiftKey', 'getMinutes', 'gofun', '62632FTIyCj', '#time-input', 'nifun', 'sanpun', 'ni\x20ji', 'juu-ni\x20ji', 'juu\x20', 'get', 'go\x20ji', '727152BqGeis', 'shichi\x20ji', 'yo\x20ji', 'go\x20juppun', 'juppun', 'san\x20juppun', 'getHours', 'ippun', 'ichi\x20ji', 'ctrlKey', 'charCodeAt', '#loading', '29436fhcAGh', '.clock', 'css', 'yonpun', 'innerHTML', 'juu\x20ji', 'roku\x20ji', 'value', 'contextmenu', 'split', '36CzGcms', 'kyuufun', 'querySelector', 'ku\x20ji', 'remove', '178830MdYxRd', 'ni\x20juppun', 'happun', '322kfHYwo', '547985Ubkqlh', 'keydown', 'Gogo', '3mhxIWB', 'san\x20ji', '398410wMGHdA', 'yon\x20juppun', 'yon-', 'keyCode', '3510133wDoXFo', 'san-', 'go-', 'ready', 'hachi\x20ji']; _0x14d1 = function () { return _0x19a1bd; }; return _0x14d1(); } const clock = document[_0x56ba9a(0x1bb)](_0x56ba9a(0x1eb)); clock['innerHTML'] = '' + (new Date()[_0x56ba9a(0x1e4)]() < 0xa ? '0' : '') + new Date()[_0x56ba9a(0x1e4)]() + ':' + (new Date()[_0x56ba9a(0x1d3)]() < 0xa ? '0' : '') + new Date()[_0x56ba9a(0x1d3)](); function displayClock() { const _0x264a85 = _0x56ba9a; clock[_0x264a85(0x1ee)] = '' + (new Date()['getHours']() < 0xa ? '0' : '') + new Date()[_0x264a85(0x1e4)]() + ':' + (new Date()[_0x264a85(0x1d3)]() < 0xa ? '0' : '') + new Date()[_0x264a85(0x1d3)](); } function _0x3e37(_0x5d3005, _0x3b01fc) { const _0x14d15d = _0x14d1(); return _0x3e37 = function (_0x3e378b, _0x431c3c) { _0x3e378b = _0x3e378b - 0x1b4; let _0x1d576b = _0x14d15d[_0x3e378b]; return _0x1d576b; }, _0x3e37(_0x5d3005, _0x3b01fc); } setInterval(() => { displayClock(); }, 0x1388); const hourFormat = document[_0x56ba9a(0x1bb)]('#hour-format'), textarea = document[_0x56ba9a(0x1bb)]('#result'); let jamJP = new Map([['00', 'juu-ni\x20ji'], ['01', _0x56ba9a(0x1e6)], ['02', _0x56ba9a(0x1d9)], ['03', 'san\x20ji'], ['04', 'yo\x20ji'], ['05', _0x56ba9a(0x1dd)], ['06', 'roku\x20ji'], ['07', _0x56ba9a(0x1df)], ['08', _0x56ba9a(0x1cf)], ['09', _0x56ba9a(0x1bc)], ['10', 'juu\x20ji'], ['11', _0x56ba9a(0x1d1)], ['12', _0x56ba9a(0x1da)], ['13', _0x56ba9a(0x1e6)], ['14', _0x56ba9a(0x1d9)], ['15', _0x56ba9a(0x1c6)], ['16', _0x56ba9a(0x1e0)], ['17', _0x56ba9a(0x1dd)], ['18', _0x56ba9a(0x1b5)], ['19', _0x56ba9a(0x1df)], ['20', _0x56ba9a(0x1cf)], ['21', _0x56ba9a(0x1bc)], ['22', _0x56ba9a(0x1b4)], ['23', _0x56ba9a(0x1d1)]]), menitJP = new Map([['00', ''], ['01', _0x56ba9a(0x1e5)], ['02', _0x56ba9a(0x1d7)], ['03', _0x56ba9a(0x1d8)], ['04', _0x56ba9a(0x1ed)], ['05', _0x56ba9a(0x1d4)], ['06', 'roppun'], ['07', 'nanafun'], ['08', _0x56ba9a(0x1c0)], ['09', _0x56ba9a(0x1ba)]]), menitKelipatanJP = new Map([['10', _0x56ba9a(0x1e2)], ['20', _0x56ba9a(0x1bf)], ['30', _0x56ba9a(0x1e3)], ['40', _0x56ba9a(0x1c8)], ['50', _0x56ba9a(0x1e1)]]), menitPuluhanJP = new Map([['1', 'juu-'], ['2', 'ni-'], ['3', _0x56ba9a(0x1cc)], ['4', _0x56ba9a(0x1c9)], ['5', _0x56ba9a(0x1cd)]]); function run() { const _0x4c9a83 = _0x56ba9a; let _0x4d572e = document['querySelector'](_0x4c9a83(0x1d6))[_0x4c9a83(0x1b6)], _0xf49bf9 = (_0x4d572e[_0x4c9a83(0x1b8)](':')[0x0] < 0xc ? 'Gozen' : _0x4c9a83(0x1c4)) + '\x20' + jamJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x0]), _0x327144 = ''; if (_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1][_0x4c9a83(0x1b8)]('')[0x0] == '0') _0x327144 = menitJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]); else menitKelipatanJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]) != undefined ? _0x327144 = menitKelipatanJP[_0x4c9a83(0x1dc)](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]) : _0x327144 = '' + menitPuluhanJP['get'](_0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]['split']('')[0x0]) + (_0x4d572e['split'](':')[0x1]['split']('')[0x0] != 0x1 ? _0x4c9a83(0x1db) : '') + menitJP[_0x4c9a83(0x1dc)]('0' + _0x4d572e[_0x4c9a83(0x1b8)](':')[0x1]['split']('')[0x1]); hourFormat[_0x4c9a83(0x1ee)] = _0x4d572e + '\x20/\x20' + (_0x4d572e['split'](':')[0x0] > 0xc ? _0x4d572e[_0x4c9a83(0x1b8)](':')[0x0] - 0xc : _0x4d572e['split'](':')[0x0]) + ':' + _0x4d572e['split'](':')[0x1] + '\x20' + (_0x4d572e[_0x4c9a83(0x1b8)](':')[0x0] < 0xc ? 'am' : 'pm'), textarea[_0x4c9a83(0x1ee)] = _0xf49bf9 + '\x20' + _0x327144; }</script>
-</body>
-
-</html>
+<script>var s = "=\"EPDUZQF!iunm?=iunm!mboh>#je#?=ifbe?!!!!=nfub!dibstfu>#VUG.9#?!!!!=nfub!iuuq.frvjw>#Y.VB.Dpnqbujcmf#!dpoufou>#JF>fehf#?!!!!=nfub!obnf>#wjfxqpsu#!dpoufou>#xjeui>efwjdf.xjeui-!jojujbm.tdbmf>2/1#?!!!!=nfub!obnf>#bvuips#!dpoufou>#Nbef!Bszb!Btubxb#?!!!!=\"..!Ujumf!..?!!!!=ujumf?弋徖皃䂨䂚䂌=0ujumf?!!!!=\"..!DTT!..?!!!!=tuzmf?!!!!!!!!Ajnqpsu!vsm)(iuuqt;00gpout/hpphmfbqjt/dpn0dtt3@gbnjmz>Ovojup\'ejtqmbz>txbq(*<!!!!!!!!Ajnqpsu!vsm)(iuuqt;00gpout/hpphmfbqjt/dpn0dtt3@gbnjmz>Opup,Tbot,KQ;xhiuA311\'ejtqmbz>txbq(*<!!!!!!!!+!|!!!!!!!!!!!!qbeejoh;!1<!!!!!!!!!!!!nbshjo;!1<!!!!!!!!!!!!cpy.tj{joh;!cpsefs.cpy<!!!!!!!!!!!!pvumjof;!opof<!!!!!!!!!!!!gpou.gbnjmz;!(Ovojup(<!!!!!!!!~!!!!!!!!cpez!|!!!!!!!!!!!!ifjhiu;!211wi<!!!!!!!!!!!!pwfsgmpx;!ijeefo<!!!!!!!!~!!!!!!!!$mpbejoh!|!!!!!!!!!!!!qptjujpo;!gjyfe<!!!!!!!!!!!!{.joefy;!21<!!!!!!!!!!!!ifjhiu;!211wi<!!!!!!!!!!!!xjeui;!211wx<!!!!!!!!!!!!pwfsgmpx;!ijeefo<!!!!!!!!!!!!cbdlhspvoe;!xijuf<!!!!!!!!!!!!dpmps;!shc)211-!211-!211*<!!!!!!!!!!!!ufyu.bmjho;!dfoufs<!!!!!!!!!!!!usbotjujpo;!3111nt<!!!!!!!!~!!!!!!!!$mpbejoh!jnh!|!!!!!!!!!!!!nbshjo;!1!bvup<!!!!!!!!!!!!xjeui;!311qy<!!!!!!!!~!!!!!!!!0+!!!!!!!!!=>>>>>>>>>!Dpoubjofs!>>>>>>>>>?!!!!!!!!+0!!!!!!!!/dpoubjofs!|!!!!!!!!!!!!ifjhiu;!211&<!!!!!!!!!!!!cbdlhspvoe;!xijuf<!!!!!!!!~!!!!!!!!/wfsujdbm.dfoufs!|!!!!!!!!!!!!ejtqmbz;!gmfy<!!!!!!!!!!!!gmfy.ejsfdujpo;!dpmvno<!!!!!!!!!!!!kvtujgz.dpoufou;!dfoufs<!!!!!!!!!!!!hbq;!5qy<!!!!!!!!~!!!!!!!!0+!!!!!!!!!=>>>>>>>>>!Ifbefs!Tfdujpo!>>>>>>>>>?!!!!!!!!+0!!!!!!!!$ifbefs!|!!!!!!!!!!!!qbeejoh;!21qy<!!!!!!!!!!!!ifjhiu;!24&<!!!!!!!!!!!!ejtqmbz;!gmfy<!!!!!!!!!!!!kvtujgz.tfmg;!mfgu<!!!!!!!!!!!!hbq;!5qy<!!!!!!!!!!!!cpy.tibepx;!1!2qy!4qy!shc)91-!91-!91*<!!!!!!!!~!!!!!!!!$ifbefs!jnh!|!!!!!!!!!!!!ifjhiu;!211&<!!!!!!!!~!!!!!!!!/dmpdl!|!!!!!!!!!!!!gpou.tj{f;!29qy<!!!!!!!!!!!!dpmps;!shc)231-!231-!231*<!!!!!!!!~!!!!!!!!/ifbefs.ufyu!|!!!!!!!!!!!!gpou.gbnjmz;!(Opup!Tbot!KQ(<!!!!!!!!!!!!gpou.tj{f;!27qy<!!!!!!!!!!!!dpmps;!shc)91-!91-!91*<!!!!!!!!!!!!mfuufs.tqbdjoh;!3qy<!!!!!!!!~!!!!!!!!Anfejb!)nby.xjeui;!591qy*!|!!!!!!!!!!!!$ifbefs!|!!!!!!!!!!!!!!!!ifjhiu;!23&<!!!!!!!!!!!!~!!!!!!!!!!!!/dmpdl!|!!!!!!!!!!!!!!!!gpou.tj{f;!27qy<!!!!!!!!!!!!~!!!!!!!!!!!!/ifbefs.ufyu!|!!!!!!!!!!!!!!!!gpou.tj{f;!25qy<!!!!!!!!!!!!~!!!!!!!!~!!!!!!!!0+!!!!!!!!!=>>>>>>>>>!Nbjo!Tfdujpo!>>>>>>>>>?!!!!!!!!+0!!!!!!!!$nbjo!|!!!!!!!!!!!!qbeejoh;!31qy!1<!!!!!!!!~!!!!!!!!0+!Gpsn!+0!!!!!!!!/gpsn!|!!!!!!!!!!!!nbshjo;!31qy!bvup<!!!!!!!!!!!!xjeui;!:1&<!!!!!!!!!!!!ejtqmbz;!gmfy<!!!!!!!!!!!!hbq;!21qy<!!!!!!!!~!!!!!!!!joqvu\\uzqf>#ujnf#^!|!!!!!!!!!!!!qbeejoh;!5qy!21qy<!!!!!!!!!!!!cpsefs.sbejvt;!4qy<!!!!!!!!!!!!cpsefs;!2qy!tpmje!shc)291-!291-!291*<!!!!!!!!!!!!gpou.tj{f;!29qy<!!!!!!!!!!!!dpmps;!shc)91-!91-!91*<!!!!!!!!!!!!mfuufs.tqbdjoh;!2qy<!!!!!!!!!!!!usbotjujpo;!411nt<!!!!!!!!~!!!!!!!!joqvu\\uzqf>#ujnf#^;ipwfs!|!!!!!!!!!!!!dpmps;!shc)244-!244-!366*<!!!!!!!!!!!!cbdlhspvoe;!shcb)244-!244-!366-!1/2*<!!!!!!!!!!!!cpsefs;!2qy!tpmje!shc)244-!244-!366*<!!!!!!!!~!!!!!!!!joqvu\\uzqf>#ujnf#^;;.xfclju.dbmfoebs.qjdlfs.joejdbups!|!!!!!!!!!!!!gjmufs;!jowfsu)76&*!tfqjb)24&*!tbuvsbuf)2&*!ivf.spubuf)241efh*!csjhiuoftt)211&*!dpousbtu)211&*<!!!!!!!!~!!!!!!!!cvuupo!|!!!!!!!!!!!!dvstps;!qpjoufs<!!!!!!!!!!!!qbeejoh;!7qy!31qy<!!!!!!!!!!!!cbdlhspvoe;!xijuf<!!!!!!!!!!!!cpsefs.sbejvt;!4qy<!!!!!!!!!!!!cpsefs;!2qy!tpmje!shc)291-!291-!291*<!!!!!!!!!!!!gpou.tj{f;!29qy<!!!!!!!!!!!!dpmps;!shc)261-!261-!261*<!!!!!!!!!!!!usbotjujpo;!411nt<!!!!!!!!~!!!!!!!!cvuupo;ipwfs!|!!!!!!!!!!!!dpmps;!shc)244-!244-!366*<!!!!!!!!!!!!cbdlhspvoe;!shcb)244-!244-!366-!1/2*<!!!!!!!!!!!!cpsefs;!2qy!tpmje!shc)244-!244-!366*<!!!!!!!!~!!!!!!!!0+!Sftvmu!+0!!!!!!!!/sftvmu!|!!!!!!!!!!!!dvstps;!efgbvmu<!!!!!!!!!!!!nbshjo;!1!bvup<!!!!!!!!!!!!qbeejoh;!21qy<!!!!!!!!!!!!xjeui;!:1&<!!!!!!!!!!!!cpsefs;!2qy!tpmje!shc)261-!261-!261*<!!!!!!!!!!!!cpsefs.sbejvt;!6qy<!!!!!!!!!!!!cbdlhspvoe;!shc)341-!341-!341*<!!!!!!!!!!!!usbotjujpo;!311nt<!!!!!!!!~!!!!!!!!/sftvmu;ipwfs!|!!!!!!!!!!!!cbdlhspvoe;!shc)351-!351-!351*<!!!!!!!!~!!!!!!!!/sftvmu!q!|!!!!!!!!!!!!gpou.tj{f;!29qy<!!!!!!!!!!!!dpmps;!shc)91-!91-!91*<!!!!!!!!~!!!!!!!!$ipvs.gpsnbu!|!!!!!!!!!!!!gpou.tj{f;!25qy<!!!!!!!!~!!!!!!!!0+!!!!!!!!!=>>>>>>>>>!Gppufs!>>>>>>>>>?!!!!!!!!+0!!!!!!!!gppufs!|!!!!!!!!!!!!qbeejoh;!21qy!1<!!!!!!!!!!!!xjeui;!211&<!!!!!!!!!!!!ifjhiu;!9&<!!!!!!!!!!!!qptjujpo;!gjyfe<!!!!!!!!!!!!cpuupn;!1<!!!!!!!!!!!!ejtqmbz;!gmfy<!!!!!!!!!!!!kvtujgz.dpoufou;!dfoufs<!!!!!!!!!!!!hbq;!7qy<!!!!!!!!!!!!cbdlhspvoe;!shc)41-!41-!41*<!!!!!!!!!!!!gpou.tj{f;!25qy<!!!!!!!!!!!!dpmps;!xijuf<!!!!!!!!~!!!!!!!!gppufs!jnh!|!!!!!!!!!!!!nby.ifjhiu;!91&!\"jnqpsubou<!!!!!!!!~!!!!!!!!Anfejb!)nby.xjeui;!591qy*!|!!!!!!!!!!!!gppufs!|!!!!!!!!!!!!!!!!gpou.tj{f;!23qy<!!!!!!!!!!!!~!!!!!!!!~!!!!=0tuzmf?!!!!=\"..!Gbwjdpo!..?!!!!=mjol!sfm>#tipsudvu!jdpo#!isfg>#iuuqt;00jnh/jdpot9/dpn0qmbtujdjof03y0dmpdl/qoh#!uzqf>#jnbhf0y.jdpo#?!!!!=\"..!KRvfsz!..?!!!!=tdsjqu!tsd>#iuuqt;00dpef/krvfsz/dpn0krvfsz.4/7/2/njo/kt#!!!!!!!!joufhsjuz>#tib367.p99BxRo[C,WEwF:uwJYsNRbQmGGTVUS,omeRn2MvQYR>#!dspttpsjhjo>#bopoznpvt#?=0tdsjqu?=0ifbe?=cpez?!!!!=\"..!Mpbejoh!Tdsffo!..?!!!!=ejw!je>#mpbejoh#!dmbtt>#wfsujdbm.dfoufs#?!!!!!!!!=jnh!tsd>#jnh0mpbejoh/hjg#!bmu>#mpbejoh!jnbhf#?!!!!!!!!=q?Npipo!nfovohhv///=0q?!!!!=0ejw?!!!!=\"..!Dpoubjofs!..?!!!!=ejw!dmbtt>#dpoubjofs#?!!!!!!!!=\"..!Ifbefs!Tfdujpo!..?!!!!!!!!=tfdujpo!je>#ifbefs#?!!!!!!!!!!!!=jnh!tsd>#jnh0kbn/qoh#!bmu>#hbncbs!kbn#!ujumf>#hbncbs!kbn#!mpbejoh>#mb{z#?!!!!!!!!!!!!=ejw!dmbtt>#wfsujdbm.dfoufs#?!!!!!!!!!!!!!!!!=q!dmbtt>#dmpdl#?21;56=0q?!!!!!!!!!!!!!!!!=q!dmbtt>#ifbefs.ufyu#!ujumf>#Jnbobokjeftvlb#?弋徖皃䂨䂚䂌=0q?!!!!!!!!!!!!=0ejw?!!!!!!!!=0tfdujpo?!!!!!!!!=\"..!Nbjo!Tfdujpo!..?!!!!!!!!=tfdujpo!je>#nbjo#?!!!!!!!!!!!!=ejw!dmbtt>#gpsn#?!!!!!!!!!!!!!!!!=joqvu!uzqf>#ujnf#!je>#ujnf.joqvu#?!!!!!!!!!!!!!!!!=cvuupo!podmjdl>#svo)*#!ujumf>#Lmjl!vouvl!nfohlpowfstj#?Lpowfstj=0cvuupo?!!!!!!!!!!!!=0ejw?!!!!!!!!!!!!=ejw!dmbtt>#sftvmu#?!!!!!!!!!!!!!!!!=q!je>#ipvs.gpsnbu#?=0q?!!!!!!!!!!!!!!!!=q!je>#sftvmu#?=0q?!!!!!!!!!!!!=0ejw?!!!!!!!!=0tfdujpo?!!!!!!!!=\"..!Gppufs!..?!!!!!!!!=gppufs?!!!!!!!!!!!!=ejw!dmbtt>#wfsujdbm.dfoufs#?!!!!!!!!!!!!!!!!=q?\'dpqz<!3133/!=b!isfg>#iuuqt;00jotubhsbn/dpn0nbefbszbbtubxb#!tuzmf>#dpmps;!xijuf<#?Nbef!Bszb!!!!!!!!!!!!!!!!!!!!!!!!Btubxb=0b?=0q?!!!!!!!!!!!!=0ejw?!!!!!!!!=0gppufs?!!!!=0ejw?!!!!=\"..!Kbwbtdsjqu!..?!!!!=tdsjqu?!!!!!!!!00!Mpbejoh!Tdsffo!!!!!!!!%)epdvnfou*/sfbez)gvodujpo!)*!|!!!!!!!!!!!!tfuUjnfpvu))*!>?!|!!!!!!!!!!!!!!!!%)($mpbejoh(*/dtt)(pqbdjuz(-!(1&(*<!!!!!!!!!!!!!!!!tfuUjnfpvu))*!>?!|!!!!!!!!!!!!!!!!!!!!%)($mpbejoh(*/sfnpwf)*<!!!!!!!!!!!!!!!!~-!3111*!!!!!!!!!!!!~-!3111*!!!!!!!!~*<!!!!!!!!%)epdvnfou*/cjoe)(dpoufyunfov(-!gvodujpo!)f*!|!!!!!!!!!!!!sfuvso!gbmtf<!!!!!!!!~*<!!!!!!!!%)epdvnfou*/po)(lfzepxo(-!gvodujpo!)f*!|!!!!!!!!!!!!jg!)f/lfzDpef!>>!234*!|!!!!!!!!!!!!!!!!sfuvso!gbmtf<!!!!!!!!!!!!~!!!!!!!!!!!!jg!)f/dusmLfz!\'\'!f/tijguLfz!\'\'!f/lfzDpef!>>!(J(/dibsDpefBu)1**!|!!!!!!!!!!!!!!!!sfuvso!gbmtf<!!!!!!!!!!!!~!!!!!!!!!!!!jg!)f/dusmLfz!\'\'!f/tijguLfz!\'\'!f/lfzDpef!>>!(D(/dibsDpefBu)1**!|!!!!!!!!!!!!!!!!sfuvso!gbmtf<!!!!!!!!!!!!~!!!!!!!!!!!!jg!)f/dusmLfz!\'\'!f/tijguLfz!\'\'!f/lfzDpef!>>!(K(/dibsDpefBu)1**!|!!!!!!!!!!!!!!!!sfuvso!gbmtf<!!!!!!!!!!!!~!!!!!!!!!!!!jg!)f/dusmLfz!\'\'!f/lfzDpef!>>!(V(/dibsDpefBu)1**!|!!!!!!!!!!!!!!!!sfuvso!gbmtf<!!!!!!!!!!!!~!!!!!!!!~*!!!!!!!!00!Sfbm!Ujnf!Dmpdl!!!!!!!!dpotu!dmpdl!>!epdvnfou/rvfszTfmfdups)(/dmpdl(*<!!!!!!!!dmpdl/joofsIUNM!>!a%|ofx!Ebuf)*/hfuIpvst)*!=!21!@!(1(!;!((~%|ofx!Ebuf)*/hfuIpvst)*~;%|ofx!Ebuf)*/hfuNjovuft)*!=!21!@!(1(!;!((~%|ofx!Ebuf)*/hfuNjovuft)*~a<!!!!!!!!gvodujpo!ejtqmbzDmpdl)*!|!!!!!!!!!!!!dmpdl/joofsIUNM!>!a%|ofx!Ebuf)*/hfuIpvst)*!=!21!@!(1(!;!((~%|ofx!Ebuf)*/hfuIpvst)*~;%|ofx!Ebuf)*/hfuNjovuft)*!=!21!@!(1(!;!((~%|ofx!Ebuf)*/hfuNjovuft)*~a<!!!!!!!!~!!!!!!!!tfuJoufswbm))*!>?!|!!!!!!!!!!!!ejtqmbzDmpdl)*<!!!!!!!!~-!6111*!!!!!!!!00!Sftvmu!!!!!!!!dpotu!ipvsGpsnbu!>!epdvnfou/rvfszTfmfdups)($ipvs.gpsnbu(*<!!!!!!!!dpotu!ufyubsfb!>!epdvnfou/rvfszTfmfdups)($sftvmu(*<!!!!!!!!mfu!kbnKQ!>!ofx!Nbq)\\!!!!!!!!!!!!\\(11(-!(kvv.oj!kj(^-!!!!!!!!!!!!\\(12(-!(jdij!kj(^-!!!!!!!!!!!!\\(13(-!(oj!kj(^-!!!!!!!!!!!!\\(14(-!(tbo!kj(^-!!!!!!!!!!!!\\(15(-!(zp!kj(^-!!!!!!!!!!!!\\(16(-!(hp!kj(^-!!!!!!!!!!!!\\(17(-!(splv!kj(^-!!!!!!!!!!!!\\(18(-!(tijdij!kj(^-!!!!!!!!!!!!\\(19(-!(ibdij!kj(^-!!!!!!!!!!!!\\(1:(-!(lv!kj(^-!!!!!!!!!!!!\\(21(-!(kvv!kj(^-!!!!!!!!!!!!\\(22(-!(kvv.jdij!kj(^-!!!!!!!!!!!!\\(23(-!(kvv.oj!kj(^-!!!!!!!!!!!!\\(24(-!(jdij!kj(^-!!!!!!!!!!!!\\(25(-!(oj!kj(^-!!!!!!!!!!!!\\(26(-!(tbo!kj(^-!!!!!!!!!!!!\\(27(-!(zp!kj(^-!!!!!!!!!!!!\\(28(-!(hp!kj(^-!!!!!!!!!!!!\\(29(-!(splv!kj(^-!!!!!!!!!!!!\\(2:(-!(tijdij!kj(^-!!!!!!!!!!!!\\(31(-!(ibdij!kj(^-!!!!!!!!!!!!\\(32(-!(lv!kj(^-!!!!!!!!!!!!\\(33(-!(kvv!kj(^-!!!!!!!!!!!!\\(34(-!(kvv.jdij!kj(^-!!!!!!!!^*<!!!!!!!!mfu!nfojuKQ!>!ofx!Nbq)\\!!!!!!!!!!!!\\(11(-!((^-!!!!!!!!!!!!\\(12(-!(jqqvo(^-!!!!!!!!!!!!\\(13(-!(ojgvo(^-!!!!!!!!!!!!\\(14(-!(tboqvo(^-!!!!!!!!!!!!\\(15(-!(zpoqvo(^-!!!!!!!!!!!!\\(16(-!(hpgvo(^-!!!!!!!!!!!!\\(17(-!(spqqvo(^-!!!!!!!!!!!!\\(18(-!(obobgvo(^-!!!!!!!!!!!!\\(19(-!(ibqqvo(^-!!!!!!!!!!!!\\(1:(-!(lzvvgvo(^-!!!!!!!!^*<!!!!!!!!mfu!nfojuLfmjqbuboKQ!>!ofx!Nbq)\\!!!!!!!!!!!!\\(21(-!(kvqqvo(^-!!!!!!!!!!!!\\(31(-!(oj!kvqqvo(^-!!!!!!!!!!!!\\(41(-!(tbo!kvqqvo(^-!!!!!!!!!!!!\\(51(-!(zpo!kvqqvo(^-!!!!!!!!!!!!\\(61(-!(hp!kvqqvo(^!!!!!!!!^*!!!!!!!!mfu!nfojuQvmviboKQ!>!ofx!Nbq)\\!!!!!!!!!!!!\\(2(-!(kvv.(^-!!!!!!!!!!!!\\(3(-!(oj.(^-!!!!!!!!!!!!\\(4(-!(tbo.(^-!!!!!!!!!!!!\\(5(-!(zpo.(^-!!!!!!!!!!!!\\(6(-!(hp.(^!!!!!!!!^*!!!!!!!!00!Nbjo!Gvodujpo!!!!!!!!gvodujpo!svo)*!|!!!!!!!!!!!!mfu!xbluv!>!epdvnfou/rvfszTfmfdups)($ujnf.joqvu(*/wbmvf<!00!Wbmvf!!!!!!!!!!!!mfu!kbn!>!a%|xbluv/tqmju)(;(*\\1^!=!23!@!(Hp{fo(!;!(Hphp(~!%|kbnKQ/hfu)xbluv/tqmju)(;(*\\1^*~a<!00!Kbn!!!!!!!!!!!!00!Nfoju!!!!!!!!!!!!mfu!nfoju!>!((<!!!!!!!!!!!!jg!)xbluv/tqmju)(;(*\\2^/tqmju)((*\\1^!>>!(1(*!|!!!!!!!!!!!!!!!!nfoju!>!nfojuKQ/hfu)xbluv/tqmju)(;(*\\2^*!!!!!!!!!!!!~!fmtf!jg!)nfojuLfmjqbuboKQ/hfu)xbluv/tqmju)(;(*\\2^*!\">!voefgjofe*!|!!!!!!!!!!!!!!!!nfoju!>!nfojuLfmjqbuboKQ/hfu)xbluv/tqmju)(;(*\\2^*<!!!!!!!!!!!!~!fmtf!|!!!!!!!!!!!!!!!!nfoju!>!a%|nfojuQvmviboKQ/hfu)xbluv/tqmju)(;(*\\2^/tqmju)((*\\1^*~%|xbluv/tqmju)(;(*\\2^/tqmju)((*\\1^!\">!2!@!(kvv!(!;!((~%|nfojuKQ/hfu)a1%|xbluv/tqmju)(;(*\\2^/tqmju)((*\\2^~a*~a!!!!!!!!!!!!~!!!!!!!!!!!!ipvsGpsnbu/joofsIUNM!>!a%|xbluv~!0!%|xbluv/tqmju)(;(*\\1^!?!23!@!xbluv/tqmju)(;(*\\1^!.!23!;!xbluv/tqmju)(;(*\\1^~;%|xbluv/tqmju)(;(*\\2^~!%|xbluv/tqmju)(;(*\\1^!=!23!@!(bn(!;!(qn(~a<!00!Gpsnbu!!!!!!!!!!!!ufyubsfb/joofsIUNM!>!a%|kbn~!%|nfoju~a<!00!Sftvmu!!!!!!!!~!!!!=0tdsjqu?!!!!=tdsjqu!tsd>#tdsjqu/kt#?=0tdsjqu?=0cpez?=0iunm?"; var m = ""; for (var i = 0; i < s.length; i++)m += String.fromCharCode(s.charCodeAt(i) - 1); document.write(m);</script>
+<noscript>You must enable JavaScript to see this text.</noscript>
